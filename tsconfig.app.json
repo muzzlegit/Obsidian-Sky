@@ -15,6 +15,17 @@
     "noEmit": true,
     "jsx": "react-jsx",
 
+    /* Alias */
+    "baseUrl": ".",
+    "paths": {
+      "#/*": ["./src/*"],
+      "#client/*": ["./src/client/*"],
+      "#server/*": ["./src/server/*"],
+      "#store/*": ["./src/store/*"],
+      "#game/*": ["./src/game/*"],
+      "#shared/*": ["./src/shared/*"]
+    },
+
     /* Linting */
     "noUnusedLocals": true,
     "noUnusedParameters": true,

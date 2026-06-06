@@ -11,10 +11,14 @@
             "id": "97e73d4e7e128101",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "README.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "Нова вкладка"
+              "title": "README"
             }
           }
         ]
@@ -40,7 +44,7 @@
                 "autoReveal": false
               },
               "icon": "lucide-folder-closed",
-              "title": "Файловий менеджер"
+              "title": "Files"
             }
           },
           {
@@ -167,17 +171,30 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "switcher:Відкрити провідник файлів": false,
-      "graph:Граф": false,
-      "canvas:Створити нове полотно": false,
-      "daily-notes:Сьогоднішня нотатка": false,
-      "templates:Вставити шаблон": false,
-      "command-palette:Відкрити меню команд": false,
-      "bases:Створити нову базу": false
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false
     }
   },
   "active": "97e73d4e7e128101",
   "lastOpenFiles": [
+    "node_modules/prettier/plugins/yaml.d.ts",
+    "node_modules/prettier/plugins/typescript.d.ts",
+    "node_modules/prettier/standalone.d.ts",
+    "node_modules/prettier/plugins/postcss.d.ts",
+    "node_modules/prettier/plugins/meriyah.d.ts",
+    "node_modules/prettier/plugins/markdown.d.ts",
+    "node_modules/prettier/index.d.ts",
+    "node_modules/prettier/plugins/html.d.ts",
+    "node_modules/prettier/plugins/graphql.d.ts",
+    "node_modules/prettier/plugins/glimmer.d.ts",
+    "node_modules/prettier/plugins/flow.d.ts",
+    "node_modules/prettier/THIRD-PARTY-NOTICES.md",
+    "node_modules/prettier/README.md",
     "README.md"
   ]
 }

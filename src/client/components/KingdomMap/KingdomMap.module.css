@@ -1,0 +1,18 @@
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.map {
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(9, 80px);
+  grid-template-rows: repeat(7, 80px);
+  gap: 4px;
+}
+.field {
+  border: 1px solid gray;
+  font-size: 12px;
+}

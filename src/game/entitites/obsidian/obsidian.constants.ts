@@ -1,0 +1,1 @@
+export const START_PLAYER_OBSIDIAN = 50;
