@@ -1,9 +1,10 @@
 import { create } from 'zustand';
 import { devtools } from 'zustand/middleware';
 import { immer } from 'zustand/middleware/immer';
+import type { KingdomUI } from '../kingdom.types';
 
 type RootStore = {
-  kingdoms: string[][];
+  kingdoms: KingdomUI[];
   currentKingdomId: string;
 };
 export const useGameUI = create<RootStore>()(

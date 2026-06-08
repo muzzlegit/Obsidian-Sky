@@ -1,10 +1,9 @@
 import type { Kingdom } from '#/game/entitites/kingdom/kingdom.types';
 import { worldSystem } from '#/game/entitites/world/world.system';
-import { toMatrix } from '#/shared/utils/toMatrix';
 import { select, useGameStore } from '#/store/gameStore';
 
 export type ServerData = {
-  kingdoms: Kingdom['id'][][];
+  kingdoms: Kingdom['id'][];
   playerKingdomId: Kingdom['id'];
 };
 
@@ -16,7 +15,7 @@ export const startServer = (): ServerData => {
   }
   const kingdoms = Object.keys(select((state) => state.kingdoms));
   return {
-    kingdoms: toMatrix(kingdoms, 3),
-    playerKingdomId: Object.keys(select((state) => state.kingdoms))[0],
+    kingdoms,
+    playerKingdomId: Object.keys(select((state) => state.kingdoms))[4],
   };
 };

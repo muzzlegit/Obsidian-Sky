@@ -1,5 +1,6 @@
 import { useKingdom } from '#/client/useKingdom';
 import { useGameStore } from '#/store/gameStore';
+import { MapNavigator } from '../CoordinateStepper/MapNavigator';
 import styles from './KingdomMap.module.css';
 
 const colors = {
@@ -19,7 +20,7 @@ export const KingdomMap = () => {
   const { kingdom, coordinates, handleDecreaseCoordinate, handleIncreaseCoordinate } = useKingdom();
   const kingdomsFields = useGameStore((state) => state.kingdomsFields);
   if (!kingdom) return;
-  console.log(kingdom);
+
   return (
     <div className={styles.container}>
       <div className={styles.map}>
@@ -35,40 +36,11 @@ export const KingdomMap = () => {
           );
         })}
       </div>
-      <div>
-        <button
-          onClick={() => {
-            handleDecreaseCoordinate('col');
-          }}
-        >
-          -
-        </button>
-        <span>{coordinates?.col}</span>
-        <button
-          onClick={() => {
-            handleIncreaseCoordinate('col');
-          }}
-        >
-          +
-        </button>
-      </div>
-      <div>
-        <button
-          onClick={() => {
-            handleDecreaseCoordinate('row');
-          }}
-        >
-          -
-        </button>
-        <span>{coordinates?.row}</span>
-        <button
-          onClick={() => {
-            handleIncreaseCoordinate('row');
-          }}
-        >
-          +
-        </button>
-      </div>
+      <MapNavigator
+        value={coordinates}
+        onDecrease={handleDecreaseCoordinate}
+        onIncrease={handleIncreaseCoordinate}
+      />
     </div>
   );
 };
