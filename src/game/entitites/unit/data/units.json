@@ -1,0 +1,1105 @@
+{
+  "undeads": {
+    "porter": {
+      "name": [
+        "Молодой гуль",
+        "Опытный гуль",
+        "Быстрый гуль",
+        "Командир обоза"
+      ],
+      "attackMin": [0, 0, 0, 0],
+      "attackMax": [0, 0, 0, 0],
+      "attackAverage": [0, 0, 0, 0],
+      "health": [8, 12, 15, 20],
+      "capacity": [50, 50, 50, 50],
+      "resources": [
+        { "gold": 3, "wood": 25, "grain": 0, "iron": 0 },
+        { "gold": 4, "wood": 12, "grain": 4, "iron": 0 },
+        { "gold": 5, "wood": 0, "grain": 6, "iron": 1 },
+        { "gold": 10, "wood": 0, "grain": 8, "iron": 1 }
+      ]
+    },
+    "swordsman": {
+      "name": ["Мертвец", "Зомби", "Командир-зомби", "Бессмертный пехотинец"],
+      "attackMin": [2, 4, 6, 10],
+      "attackMax": [3, 6, 8, 12],
+      "attackAverage": [3, 5, 7, 11],
+      "health": [10, 15, 25, 30],
+      "resources": [
+        { "gold": 5, "wood": 60, "grain": 0, "iron": 0 },
+        { "gold": 7, "wood": 67, "grain": 8, "iron": 0 },
+        { "gold": 10, "wood": 0, "grain": 12, "iron": 15 },
+        { "gold": 15, "wood": 0, "grain": 15, "iron": 20 }
+      ]
+    },
+    "cavalier": {
+      "name": [
+        "Темный всадник",
+        "Черный рыцарь",
+        "Рыцарь тьмы",
+        "Рыцарь смерти"
+      ],
+      "attackMin": [3, 5, 8, 10],
+      "attackMax": [4, 7, 10, 12],
+      "attackAverage": [3.5, 6, 9, 11],
+      "health": [15, 25, 35, 40],
+      "resources": [
+        { "gold": 13, "wood": 85, "grain": 0, "iron": 0 },
+        { "gold": 19, "wood": 0, "grain": 31, "iron": 0 },
+        { "gold": 26, "wood": 0, "grain": 42, "iron": 2 },
+        { "gold": 35, "wood": 0, "grain": 45, "iron": 3 }
+      ]
+    },
+    "flying": {
+      "name": [
+        "Костяной дракон",
+        "Боевой дракон",
+        "Эфирный дракон",
+        "Призрачный дракон"
+      ],
+      "attackMin": [4, 8, 10, 14],
+      "attackMax": [6, 10, 12, 16],
+      "attackAverage": [5, 9, 11, 15],
+      "health": [20, 30, 40, 60],
+      "resources": [
+        { "gold": 16, "wood": 118, "grain": 0, "iron": 0 },
+        { "gold": 20, "wood": 0, "grain": 42, "iron": 0 },
+        { "gold": 27, "wood": 0, "grain": 49, "iron": 3 },
+        { "gold": 40, "wood": 0, "grain": 40, "iron": 10 }
+      ]
+    },
+    "archer": {
+      "name": ["Оборотень", "Кровавый оборотень", "Вурдалак", "Лунный стрелок"],
+      "attackMin": [25, 35, 45, 50],
+      "attackMax": [35, 45, 55, 60],
+      "attackAverage": [30, 40, 50, 55],
+      "health": [6, 10, 15, 15],
+      "resources": [
+        { "gold": 16, "wood": 158, "grain": 0, "iron": 0 },
+        { "gold": 26, "wood": 168, "grain": 15, "iron": 0 },
+        { "gold": 33, "wood": 0, "grain": 22, "iron": 32 },
+        { "gold": 35, "wood": 0, "grain": 25, "iron": 35 }
+      ]
+    },
+    "healer": {
+      "name": ["Озерная ведьма", "Банша", "Древняя банша", "Верховная банша"],
+      "attackMin": [0, 1, 1, 1],
+      "attackMax": [1, 1, 2, 2],
+      "attackAverage": [0.5, 1, 1.5, 1.5],
+      "health": [10, 15, 20, 20],
+      "resurrection": [1, 2, 3, 4],
+      "resources": [
+        { "gold": 25, "wood": 0, "grain": 200, "iron": 35 },
+        { "gold": 35, "wood": 0, "grain": 300, "iron": 45 },
+        { "gold": 50, "wood": 0, "grain": 400, "iron": 60 },
+        { "gold": 60, "wood": 0, "grain": 450, "iron": 70 }
+      ]
+    },
+    "mercenary": {
+      "name": ["Затерянная душа", "Призрак", "Призрак тьмы", "Призрак короля"],
+      "attackMin": [3, 5, 7, 8],
+      "attackMax": [5, 7, 9, 10],
+      "attackAverage": [4, 6, 8, 9],
+      "health": [1, 1, 1, 1],
+      "resources": [
+        { "gold": 75, "wood": 0, "grain": 0, "iron": 0 },
+        { "gold": 90, "wood": 0, "grain": 0, "iron": 0 },
+        { "gold": 105, "wood": 0, "grain": 0, "iron": 0 },
+        { "gold": 120, "wood": 0, "grain": 0, "iron": 0 }
+      ]
+    },
+    "mage": {
+      "name": ["Слуга тьмы", "Некромант", "Собиратель душ", "Повелитель душ"],
+      "attackMin": [3, 4, 5, 8],
+      "attackMax": [3, 4, 5, 8],
+      "attackAverage": [3, 4, 5, 8],
+      "health": [5, 10, 15, 20],
+      "towersSuppression": [10, 20, 30, 40],
+      "resources": [
+        { "gold": 80, "wood": 0, "grain": 0, "iron": 107 },
+        { "gold": 118, "wood": 0, "grain": 0, "iron": 150 },
+        { "gold": 190, "wood": 0, "grain": 0, "iron": 200 },
+        { "gold": 250, "wood": 0, "grain": 0, "iron": 250 }
+      ]
+    }
+  },
+  "demons": {
+    "porter": {
+      "name": [
+        "Мародер-собиратель",
+        "Мародер-поглотитель",
+        "Мародер-поджигатель",
+        "Мародер-разрушитель"
+      ],
+      "attackMin": [0, 0, 0, 0],
+      "attackMax": [0, 0, 0, 0],
+      "attackAverage": [0, 0, 0, 0],
+      "health": [8, 12, 15, 20],
+      "capacity": [50, 50, 50, 50],
+      "resources": [
+        { "gold": 3, "wood": 25, "grain": 0, "iron": 0 },
+        { "gold": 4, "wood": 12, "grain": 4, "iron": 0 },
+        { "gold": 5, "wood": 0, "grain": 6, "iron": 1 },
+        { "gold": 10, "wood": 0, "grain": 8, "iron": 1 }
+      ]
+    },
+    "swordsman": {
+      "name": ["Скелет", "Боевой скелет", "Огненный скелет", "Адский скелет"],
+      "attackMin": [2, 4, 6, 11],
+      "attackMax": [3, 6, 8, 12],
+      "attackAverage": [2.5, 5, 7, 11],
+      "health": [10, 15, 25, 30],
+      "resources": [
+        { "gold": 5, "wood": 60, "grain": 0, "iron": 0 },
+        { "gold": 7, "wood": 67, "grain": 8, "iron": 0 },
+        { "gold": 10, "wood": 0, "grain": 12, "iron": 15 },
+        { "gold": 15, "wood": 0, "grain": 15, "iron": 20 }
+      ]
+    },
+    "cavalier": {
+      "name": ["Террозавр", "Тварь", "Адская тварь", "Порождение зла"],
+      "attackMin": [3, 5, 8, 10],
+      "attackMax": [4, 7, 10, 12],
+      "attackAverage": [3.5, 6, 9, 11],
+      "health": [15, 25, 35, 40],
+      "resources": [
+        { "gold": 13, "wood": 85, "grain": 0, "iron": 0 },
+        { "gold": 19, "wood": 0, "grain": 31, "iron": 0 },
+        { "gold": 26, "wood": 0, "grain": 42, "iron": 2 },
+        { "gold": 35, "wood": 0, "grain": 45, "iron": 3 }
+      ]
+    },
+    "flying": {
+      "name": ["Дракон", "Ржавый дракон", "Чёрный дракон", "Мифриловый дракон"],
+      "attackMin": [4, 8, 10, 14],
+      "attackMax": [6, 10, 12, 16],
+      "attackAverage": [5, 9, 11, 15],
+      "health": [20, 30, 40, 60],
+      "resources": [
+        { "gold": 16, "wood": 118, "grain": 0, "iron": 0 },
+        { "gold": 20, "wood": 0, "grain": 42, "iron": 0 },
+        { "gold": 27, "wood": 0, "grain": 49, "iron": 3 },
+        { "gold": 40, "wood": 0, "grain": 40, "iron": 10 }
+      ]
+    },
+    "archer": {
+      "name": [
+        "Элементаль",
+        "Элементаль лавы",
+        "Элементаль огня",
+        "Адский элементаль"
+      ],
+      "attackMin": [25, 35, 45, 50],
+      "attackMax": [35, 45, 55, 60],
+      "attackAverage": [30, 40, 50, 55],
+      "health": [6, 10, 15, 15],
+      "resources": [
+        { "gold": 16, "wood": 158, "grain": 0, "iron": 0 },
+        { "gold": 26, "wood": 168, "grain": 15, "iron": 0 },
+        { "gold": 33, "wood": 0, "grain": 22, "iron": 32 },
+        { "gold": 35, "wood": 0, "grain": 25, "iron": 35 }
+      ]
+    },
+    "healer": {
+      "name": [
+        "Блад-эйзер",
+        "Исцеляющий эйзер",
+        "Огненный эйзер",
+        "Повелитель душ"
+      ],
+      "attackMin": [0, 1, 1, 1],
+      "attackMax": [1, 1, 2, 2],
+      "attackAverage": [0.5, 1, 1.5, 1.5],
+      "health": [10, 15, 20, 20],
+      "resurrection": [1, 2, 3, 4],
+      "resources": [
+        { "gold": 25, "wood": 0, "grain": 200, "iron": 35 },
+        { "gold": 35, "wood": 0, "grain": 300, "iron": 45 },
+        { "gold": 50, "wood": 0, "grain": 400, "iron": 60 },
+        { "gold": 60, "wood": 0, "grain": 450, "iron": 70 }
+      ]
+    },
+    "mercenary": {
+      "name": [
+        "Демонесса",
+        "Боевая демонесса",
+        "Пламенеющая демонесса",
+        "Адская демонесса"
+      ],
+      "attackMin": [5, 8, 11, 12],
+      "attackMax": [7, 10, 13, 14],
+      "attackAverage": [6, 9, 12, 13],
+      "health": [1, 1, 1, 1],
+      "resources": [
+        { "gold": 75, "wood": 0, "grain": 0, "iron": 0 },
+        { "gold": 90, "wood": 0, "grain": 0, "iron": 0 },
+        { "gold": 105, "wood": 0, "grain": 0, "iron": 0 },
+        { "gold": 120, "wood": 0, "grain": 0, "iron": 0 }
+      ]
+    },
+    "mage": {
+      "name": ["Ледяной лич", "Лич", "Пылающий лич", "Древний лич"],
+      "attackMin": [3, 4, 5, 8],
+      "attackMax": [3, 4, 5, 8],
+      "attackAverage": [3, 4, 5, 8],
+      "health": [5, 10, 15, 20],
+      "towersSuppression": [10, 20, 30, 40],
+      "resources": [
+        { "gold": 80, "wood": 0, "grain": 0, "iron": 107 },
+        { "gold": 118, "wood": 0, "grain": 0, "iron": 150 },
+        { "gold": 190, "wood": 0, "grain": 0, "iron": 200 },
+        { "gold": 250, "wood": 0, "grain": 0, "iron": 250 }
+      ]
+    }
+  },
+  "drows": {
+    "porter": {
+      "name": ["Презренный Роф", "Раб Роф", "Вьючный Роф", "Мерзкий Роф"],
+      "attackMin": [0, 0, 0, 0],
+      "attackMax": [0, 0, 0, 0],
+      "attackAverage": [0, 0, 0, 0],
+      "health": [8, 12, 15, 20],
+      "capacity": [50, 50, 50, 50],
+      "resources": [
+        { "gold": 3, "wood": 25, "grain": 0, "iron": 0 },
+        { "gold": 4, "wood": 12, "grain": 4, "iron": 0 },
+        { "gold": 5, "wood": 0, "grain": 6, "iron": 1 },
+        { "gold": 10, "wood": 0, "grain": 8, "iron": 1 }
+      ]
+    },
+    "swordsman": {
+      "name": [
+        "Служитель клинка",
+        "Хранитель клинка",
+        "Мастер клинка",
+        "Повелитель клинка"
+      ],
+      "attackMin": [2, 4, 6, 10],
+      "attackMax": [3, 6, 8, 12],
+      "attackAverage": [3, 5, 7, 11],
+      "health": [10, 15, 25, 30],
+      "resources": [
+        { "gold": 5, "wood": 60, "grain": 0, "iron": 0 },
+        { "gold": 7, "wood": 67, "grain": 8, "iron": 0 },
+        { "gold": 10, "wood": 0, "grain": 12, "iron": 15 },
+        { "gold": 15, "wood": 0, "grain": 15, "iron": 20 }
+      ]
+    },
+    "cavalier": {
+      "name": [
+        "Наездник на ящере",
+        "Разрушитель",
+        "Джаггернаут",
+        "Бессмертный джаггернаут"
+      ],
+      "attackMin": [3, 5, 8, 10],
+      "attackMax": [4, 7, 10, 12],
+      "attackAverage": [3.5, 6, 9, 11],
+      "health": [15, 25, 35, 40],
+      "resources": [
+        { "gold": 13, "wood": 85, "grain": 0, "iron": 0 },
+        { "gold": 19, "wood": 0, "grain": 31, "iron": 0 },
+        { "gold": 26, "wood": 0, "grain": 42, "iron": 2 },
+        { "gold": 35, "wood": 0, "grain": 45, "iron": 3 }
+      ]
+    },
+    "flying": {
+      "name": ["Гарпия", "Гарпия-ведьма", "Боевая гарпия", "Безумная гарпия"],
+      "attackMin": [4, 8, 10, 14],
+      "attackMax": [6, 10, 12, 16],
+      "attackAverage": [5, 9, 11, 15],
+      "health": [20, 30, 40, 60],
+      "resources": [
+        { "gold": 16, "wood": 118, "grain": 0, "iron": 0 },
+        { "gold": 20, "wood": 0, "grain": 42, "iron": 0 },
+        { "gold": 27, "wood": 0, "grain": 49, "iron": 3 },
+        { "gold": 40, "wood": 0, "grain": 40, "iron": 10 }
+      ]
+    },
+    "archer": {
+      "name": ["Охотник", "Снайпер", "Тёмный снайпер", "Элитный снайпер"],
+      "attackMin": [25, 35, 45, 50],
+      "attackMax": [35, 45, 55, 60],
+      "attackAverage": [30, 40, 50, 55],
+      "health": [6, 10, 15, 15],
+      "resources": [
+        { "gold": 16, "wood": 158, "grain": 0, "iron": 0 },
+        { "gold": 26, "wood": 168, "grain": 15, "iron": 0 },
+        { "gold": 33, "wood": 0, "grain": 22, "iron": 32 },
+        { "gold": 35, "wood": 0, "grain": 25, "iron": 35 }
+      ]
+    },
+    "healer": {
+      "name": ["Жрица", "Жрица Ллот", "Архижрица", "Жрица тьмы"],
+      "attackMin": [0, 1, 1, 1],
+      "attackMax": [1, 1, 2, 2],
+      "attackAverage": [0.5, 1, 1.5, 1.5],
+      "health": [10, 15, 20, 20],
+      "resurrection": [1, 2, 3, 4],
+      "resources": [
+        { "gold": 25, "wood": 0, "grain": 200, "iron": 35 },
+        { "gold": 35, "wood": 0, "grain": 300, "iron": 45 },
+        { "gold": 50, "wood": 0, "grain": 400, "iron": 60 },
+        { "gold": 60, "wood": 0, "grain": 450, "iron": 70 }
+      ]
+    },
+    "mercenary": {
+      "name": [
+        "Охотник за головами",
+        "Убийца",
+        "Совершенный убийца",
+        "Легендарный убийца"
+      ],
+      "attackMin": [3, 5, 7, 8],
+      "attackMax": [5, 7, 9, 10],
+      "attackAverage": [4, 6, 8, 9],
+      "health": [1, 1, 1, 1],
+      "resources": [
+        { "gold": 75, "wood": 0, "grain": 0, "iron": 0 },
+        { "gold": 90, "wood": 0, "grain": 0, "iron": 0 },
+        { "gold": 105, "wood": 0, "grain": 0, "iron": 0 },
+        { "gold": 120, "wood": 0, "grain": 0, "iron": 0 }
+      ]
+    },
+    "mage": {
+      "name": [
+        "Арахнид",
+        "Человек-скорпион",
+        "Человек-паук",
+        "Повелитель тьмы"
+      ],
+      "attackMin": [3, 4, 5, 8],
+      "attackMax": [3, 4, 5, 8],
+      "attackAverage": [3, 4, 5, 8],
+      "health": [5, 10, 15, 20],
+      "towersSuppression": [20, 40, 60, 80],
+      "resources": [
+        { "gold": 80, "wood": 0, "grain": 0, "iron": 107 },
+        { "gold": 118, "wood": 0, "grain": 0, "iron": 150 },
+        { "gold": 190, "wood": 0, "grain": 0, "iron": 200 },
+        { "gold": 250, "wood": 0, "grain": 0, "iron": 250 }
+      ]
+    }
+  },
+  "chimeras": {
+    "porter": {
+      "name": [
+        "Подземный носильщик",
+        "Младший троглодит",
+        "Троглодит",
+        "Боевой троглодит"
+      ],
+      "attackMin": [0, 0, 0, 0],
+      "attackMax": [0, 0, 0, 0],
+      "attackAverage": [0, 0, 0, 0],
+      "health": [8, 12, 15, 20],
+      "capacity": [50, 50, 50, 50],
+      "resources": [
+        { "gold": 3, "wood": 25, "grain": 0, "iron": 0 },
+        { "gold": 4, "wood": 12, "grain": 4, "iron": 0 },
+        { "gold": 5, "wood": 0, "grain": 6, "iron": 1 },
+        { "gold": 10, "wood": 0, "grain": 8, "iron": 1 }
+      ]
+    },
+    "swordsman": {
+      "name": [
+        "Воин топора",
+        "Минотавр",
+        "Золотой минотавр",
+        "Хранитель лабиринта"
+      ],
+      "attackMin": [2, 4, 6, 10],
+      "attackMax": [3, 6, 8, 12],
+      "attackAverage": [3, 5, 7, 11],
+      "health": [10, 15, 25, 30],
+      "resources": [
+        { "gold": 5, "wood": 60, "grain": 0, "iron": 0 },
+        { "gold": 7, "wood": 67, "grain": 8, "iron": 0 },
+        { "gold": 10, "wood": 0, "grain": 12, "iron": 15 },
+        { "gold": 15, "wood": 0, "grain": 15, "iron": 20 }
+      ]
+    },
+    "cavalier": {
+      "name": [
+        "Сороконожка",
+        "Молодая сколопендра",
+        "Быстрая сколопендра",
+        "Молниеносная сколопендра"
+      ],
+      "attackMin": [3, 5, 8, 10],
+      "attackMax": [4, 7, 10, 12],
+      "attackAverage": [3.5, 6, 9, 11],
+      "health": [15, 25, 35, 40],
+      "resources": [
+        { "gold": 13, "wood": 85, "grain": 0, "iron": 0 },
+        { "gold": 19, "wood": 0, "grain": 31, "iron": 0 },
+        { "gold": 26, "wood": 0, "grain": 42, "iron": 2 },
+        { "gold": 35, "wood": 0, "grain": 45, "iron": 3 }
+      ]
+    },
+    "flying": {
+      "name": [
+        "Мантикора",
+        "Скорпикора",
+        "Фосфорная скорпикора",
+        "Летающая бестия"
+      ],
+      "attackMin": [4, 8, 10, 14],
+      "attackMax": [6, 10, 12, 16],
+      "attackAverage": [5, 9, 11, 15],
+      "health": [20, 30, 40, 60],
+      "resources": [
+        { "gold": 16, "wood": 118, "grain": 0, "iron": 0 },
+        { "gold": 20, "wood": 0, "grain": 42, "iron": 0 },
+        { "gold": 27, "wood": 0, "grain": 49, "iron": 3 },
+        { "gold": 40, "wood": 0, "grain": 40, "iron": 10 }
+      ]
+    },
+    "archer": {
+      "name": [
+        "Зеленая горгона",
+        "Чешуйчатая горгона",
+        "Античная горгона",
+        "Медуза-горгона"
+      ],
+      "attackMin": [25, 35, 45, 50],
+      "attackMax": [35, 45, 55, 60],
+      "attackAverage": [30, 40, 50, 55],
+      "health": [6, 10, 15, 15],
+      "resources": [
+        { "gold": 16, "wood": 158, "grain": 0, "iron": 0 },
+        { "gold": 26, "wood": 168, "grain": 15, "iron": 0 },
+        { "gold": 33, "wood": 0, "grain": 22, "iron": 32 },
+        { "gold": 35, "wood": 0, "grain": 25, "iron": 35 }
+      ]
+    },
+    "healer": {
+      "name": ["Бледный целитель", "Созерцатель", "Злобоглаз", "Око зла"],
+      "attackMin": [0, 1, 1, 1],
+      "attackMax": [1, 1, 2, 2],
+      "attackAverage": [0.5, 1, 1.5, 1.5],
+      "health": [10, 15, 20, 20],
+      "resurrection": [1, 2, 3, 4],
+      "resources": [
+        { "gold": 25, "wood": 0, "grain": 200, "iron": 35 },
+        { "gold": 35, "wood": 0, "grain": 300, "iron": 45 },
+        { "gold": 50, "wood": 0, "grain": 400, "iron": 60 },
+        { "gold": 60, "wood": 0, "grain": 450, "iron": 70 }
+      ]
+    },
+    "mercenary": {
+      "name": [
+        "Подземный грызун",
+        "Опытная крыса",
+        "Крысиный наемник",
+        "Крыса-убийца"
+      ],
+      "attackMin": [3, 5, 7, 8],
+      "attackMax": [5, 7, 9, 10],
+      "attackAverage": [4, 6, 8, 9],
+      "health": [1, 1, 1, 1],
+      "resources": [
+        { "gold": 75, "wood": 0, "grain": 0, "iron": 0 },
+        { "gold": 90, "wood": 0, "grain": 0, "iron": 0 },
+        { "gold": 105, "wood": 0, "grain": 0, "iron": 0 },
+        { "gold": 120, "wood": 0, "grain": 0, "iron": 0 }
+      ]
+    },
+    "mage": {
+      "name": [
+        "Подземный червь",
+        "Нематодон",
+        "Древний нематодон",
+        "Повелитель подземелья"
+      ],
+      "attackMin": [3, 4, 5, 8],
+      "attackMax": [3, 4, 5, 8],
+      "attackAverage": [3, 4, 5, 8],
+      "health": [5, 10, 15, 20],
+      "towersSuppression": [10, 20, 30, 40],
+      "resources": [
+        { "gold": 80, "wood": 0, "grain": 0, "iron": 107 },
+        { "gold": 118, "wood": 0, "grain": 0, "iron": 150 },
+        { "gold": 190, "wood": 0, "grain": 0, "iron": 200 },
+        { "gold": 250, "wood": 0, "grain": 0, "iron": 250 }
+      ]
+    }
+  },
+  "humans": {
+    "porter": {
+      "name": ["Прислужник", "Слуга", "Оруженосец", "Адъютант"],
+      "attackMin": [0, 0, 0, 0],
+      "attackMax": [0, 0, 0, 0],
+      "attackAverage": [0, 0, 0, 0],
+      "health": [8, 12, 15, 20],
+      "capacity": [100, 100, 100, 100],
+      "resources": [
+        { "gold": 3, "wood": 25, "grain": 0, "iron": 0 },
+        { "gold": 4, "wood": 12, "grain": 4, "iron": 0 },
+        { "gold": 5, "wood": 0, "grain": 6, "iron": 1 },
+        { "gold": 10, "wood": 0, "grain": 8, "iron": 1 }
+      ]
+    },
+    "swordsman": {
+      "name": ["Крестьянин", "Пикинёр", "Рыцарь", "Святой рыцарь"],
+      "attackMin": [2, 4, 6, 10],
+      "attackMax": [3, 6, 8, 12],
+      "attackAverage": [2.5, 5, 7, 11],
+      "health": [10, 15, 25, 30],
+      "resources": [
+        { "gold": 5, "wood": 60, "grain": 0, "iron": 0 },
+        { "gold": 7, "wood": 67, "grain": 8, "iron": 0 },
+        { "gold": 10, "wood": 0, "grain": 12, "iron": 15 },
+        { "gold": 15, "wood": 0, "grain": 15, "iron": 20 }
+      ]
+    },
+    "cavalier": {
+      "name": [
+        "Лёгкая конница",
+        "Средняя конница",
+        "Тяжёлая конница",
+        "Элитная кавалерия"
+      ],
+      "attackMin": [3, 5, 8, 10],
+      "attackMax": [4, 7, 10, 12],
+      "attackAverage": [3.5, 6, 9, 11],
+      "health": [15, 25, 35, 40],
+      "resources": [
+        { "gold": 13, "wood": 85, "grain": 0, "iron": 0 },
+        { "gold": 19, "wood": 0, "grain": 31, "iron": 0 },
+        { "gold": 26, "wood": 0, "grain": 42, "iron": 2 },
+        { "gold": 35, "wood": 0, "grain": 45, "iron": 3 }
+      ]
+    },
+    "flying": {
+      "name": ["Пегас", "Серебряный пегас", "Золотой пегас", "Алмазный пегас"],
+      "attackMin": [4, 8, 10, 15],
+      "attackMax": [6, 10, 12, 16],
+      "attackAverage": [5, 9, 11, 15],
+      "health": [20, 30, 40, 60],
+      "resources": [
+        { "gold": 16, "wood": 118, "grain": 0, "iron": 0 },
+        { "gold": 20, "wood": 0, "grain": 42, "iron": 0 },
+        { "gold": 27, "wood": 0, "grain": 49, "iron": 3 },
+        { "gold": 40, "wood": 0, "grain": 40, "iron": 10 }
+      ]
+    },
+    "archer": {
+      "name": ["Лучник", "Арбалетчик", "Тяжелый арбалетчик", "Элитный стрелок"],
+      "attackMin": [25, 35, 45, 60],
+      "attackMax": [35, 45, 55, 60],
+      "attackAverage": [30, 40, 50, 55],
+      "health": [6, 10, 15, 15],
+      "resources": [
+        { "gold": 16, "wood": 158, "grain": 0, "iron": 0 },
+        { "gold": 26, "wood": 168, "grain": 15, "iron": 0 },
+        { "gold": 33, "wood": 0, "grain": 22, "iron": 32 },
+        { "gold": 35, "wood": 0, "grain": 25, "iron": 35 }
+      ]
+    },
+    "healer": {
+      "name": ["Послушник", "Монах", "Боевой монах", "Кардинал"],
+      "attackMin": [0, 1, 1, 2],
+      "attackMax": [1, 1, 2, 2],
+      "attackAverage": [0.5, 1, 1.5, 1.5],
+      "health": [10, 15, 20, 20],
+      "resurrection": [1, 2, 3, 4],
+      "resources": [
+        { "gold": 25, "wood": 0, "grain": 200, "iron": 35 },
+        { "gold": 35, "wood": 0, "grain": 300, "iron": 45 },
+        { "gold": 50, "wood": 0, "grain": 400, "iron": 60 },
+        { "gold": 60, "wood": 0, "grain": 450, "iron": 70 }
+      ]
+    },
+    "mercenary": {
+      "name": ["Разбойник", "Сорвиголова", "Мастер меча", "Элитный наемник"],
+      "attackMin": [3, 5, 7, 9],
+      "attackMax": [5, 7, 9, 10],
+      "attackAverage": [4, 6, 8, 9],
+      "health": [1, 1, 1, 1],
+      "resources": [
+        { "gold": 75, "wood": 0, "grain": 0, "iron": 0 },
+        { "gold": 90, "wood": 0, "grain": 0, "iron": 0 },
+        { "gold": 105, "wood": 0, "grain": 0, "iron": 0 },
+        { "gold": 120, "wood": 0, "grain": 0, "iron": 0 }
+      ]
+    },
+    "mage": {
+      "name": ["Ученик мага", "Маг", "Архимаг", "Повелитель стихий"],
+      "attackMin": [3, 4, 5, 8],
+      "attackMax": [3, 4, 5, 8],
+      "attackAverage": [3, 4, 5, 8],
+      "health": [5, 10, 15, 20],
+      "towersSuppression": [10, 20, 30, 40],
+      "resources": [
+        { "gold": 80, "wood": 0, "grain": 0, "iron": 107 },
+        { "gold": 118, "wood": 0, "grain": 0, "iron": 150 },
+        { "gold": 190, "wood": 0, "grain": 0, "iron": 200 },
+        { "gold": 250, "wood": 0, "grain": 0, "iron": 250 }
+      ]
+    }
+  },
+  "elfs": {
+    "porter": {
+      "name": [
+        "Гном-носильщик",
+        "Гном-слуга",
+        "Гном-оруженосец",
+        "Гном-адьютант"
+      ],
+      "attackMin": [0, 0, 0, 0],
+      "attackMax": [0, 0, 0, 0],
+      "attackAverage": [0, 0, 0, 0],
+      "health": [8, 12, 15, 20],
+      "capacity": [50, 50, 50, 50],
+      "resources": [
+        { "gold": 3, "wood": 25, "grain": 0, "iron": 0 },
+        { "gold": 4, "wood": 12, "grain": 4, "iron": 0 },
+        { "gold": 5, "wood": 0, "grain": 6, "iron": 1 },
+        { "gold": 10, "wood": 0, "grain": 8, "iron": 1 }
+      ]
+    },
+    "swordsman": {
+      "name": [
+        "Эльфийский стражник",
+        "Эльфийский боец",
+        "Эльфийский рыцарь",
+        "Капитан стражи"
+      ],
+      "attackMin": [2, 4, 6, 10],
+      "attackMax": [3, 6, 8, 12],
+      "attackAverage": [2.5, 5, 7, 11],
+      "health": [10, 15, 25, 30],
+      "resources": [
+        { "gold": 5, "wood": 60, "grain": 0, "iron": 0 },
+        { "gold": 7, "wood": 67, "grain": 8, "iron": 0 },
+        { "gold": 10, "wood": 0, "grain": 12, "iron": 15 },
+        { "gold": 15, "wood": 0, "grain": 15, "iron": 20 }
+      ]
+    },
+    "cavalier": {
+      "name": [
+        "Молодой кентавр",
+        "Кентавр",
+        "Боевой кентавр",
+        "Древний кентавр"
+      ],
+      "attackMin": [3, 5, 8, 10],
+      "attackMax": [4, 7, 10, 12],
+      "attackAverage": [3.5, 6, 9, 11],
+      "health": [15, 25, 35, 40],
+      "resources": [
+        { "gold": 13, "wood": 85, "grain": 0, "iron": 0 },
+        { "gold": 19, "wood": 0, "grain": 31, "iron": 0 },
+        { "gold": 26, "wood": 0, "grain": 42, "iron": 2 },
+        { "gold": 35, "wood": 0, "grain": 45, "iron": 3 }
+      ]
+    },
+    "flying": {
+      "name": ["Молодой грифон", "Грифон", "Боевой грифон", "Древний грифон"],
+      "attackMin": [4, 8, 10, 14],
+      "attackMax": [6, 10, 12, 16],
+      "attackAverage": [5, 9, 11, 15],
+      "health": [20, 30, 40, 60],
+      "resources": [
+        { "gold": 16, "wood": 118, "grain": 0, "iron": 0 },
+        { "gold": 20, "wood": 0, "grain": 42, "iron": 0 },
+        { "gold": 27, "wood": 0, "grain": 49, "iron": 3 },
+        { "gold": 40, "wood": 0, "grain": 40, "iron": 10 }
+      ]
+    },
+    "archer": {
+      "name": [
+        "Эльфийский лучник",
+        "Рейнджер",
+        "Серебряный рейнджер",
+        "Элитный рейнджер"
+      ],
+      "attackMin": [25, 35, 45, 50],
+      "attackMax": [35, 45, 55, 60],
+      "attackAverage": [30, 40, 50, 55],
+      "health": [6, 10, 15, 15],
+      "resources": [
+        { "gold": 16, "wood": 158, "grain": 0, "iron": 0 },
+        { "gold": 26, "wood": 168, "grain": 15, "iron": 0 },
+        { "gold": 33, "wood": 0, "grain": 22, "iron": 32 },
+        { "gold": 35, "wood": 0, "grain": 25, "iron": 35 }
+      ]
+    },
+    "healer": {
+      "name": [
+        "Лекарь",
+        "Храмовник",
+        "Верховный храмовник",
+        "Повелительница жизни"
+      ],
+      "attackMin": [0, 1, 1, 1],
+      "attackMax": [1, 1, 2, 2],
+      "attackAverage": [0.5, 1, 1.5, 1.5],
+      "health": [10, 15, 20, 20],
+      "resurrection": [2, 3, 4, 5],
+      "resources": [
+        { "gold": 25, "wood": 0, "grain": 200, "iron": 35 },
+        { "gold": 35, "wood": 0, "grain": 300, "iron": 45 },
+        { "gold": 50, "wood": 0, "grain": 400, "iron": 60 },
+        { "gold": 60, "wood": 0, "grain": 450, "iron": 70 }
+      ]
+    },
+    "mercenary": {
+      "name": [
+        "Ассасин",
+        "Мастер-ассасин",
+        "Грандмастер-ассасин",
+        "Легендарный ассасин"
+      ],
+      "attackMin": [3, 5, 7, 8],
+      "attackMax": [5, 7, 9, 10],
+      "attackAverage": [4, 6, 8, 9],
+      "health": [1, 1, 1, 1],
+      "resources": [
+        { "gold": 75, "wood": 0, "grain": 0, "iron": 0 },
+        { "gold": 90, "wood": 0, "grain": 0, "iron": 0 },
+        { "gold": 105, "wood": 0, "grain": 0, "iron": 0 },
+        { "gold": 120, "wood": 0, "grain": 0, "iron": 0 }
+      ]
+    },
+    "mage": {
+      "name": ["Травник", "Друид", "Архидруид", "Владыка леса"],
+      "attackMin": [3, 4, 5, 8],
+      "attackMax": [3, 4, 5, 8],
+      "attackAverage": [3, 4, 5, 8],
+      "health": [5, 10, 15, 20],
+      "towersSuppression": [10, 20, 30, 40],
+      "resources": [
+        { "gold": 80, "wood": 0, "grain": 0, "iron": 107 },
+        { "gold": 118, "wood": 0, "grain": 0, "iron": 150 },
+        { "gold": 190, "wood": 0, "grain": 0, "iron": 200 },
+        { "gold": 250, "wood": 0, "grain": 0, "iron": 250 }
+      ]
+    }
+  },
+  "wizards": {
+    "porter": {
+      "name": ["Прислужник", "Слуга", "Оруженосец", "Адъютант"],
+      "attackMin": [0, 0, 0, 0],
+      "attackMax": [0, 0, 0, 0],
+      "attackAverage": [0, 0, 0, 0],
+      "health": [8, 12, 15, 20],
+      "capacity": [100, 100, 100, 100],
+      "resources": [
+        { "gold": 3, "wood": 25, "grain": 0, "iron": 0 },
+        { "gold": 4, "wood": 12, "grain": 4, "iron": 0 },
+        { "gold": 5, "wood": 0, "grain": 6, "iron": 1 },
+        { "gold": 10, "wood": 0, "grain": 8, "iron": 1 }
+      ]
+    },
+    "swordsman": {
+      "name": ["Крестьянин", "Пикинёр", "Рыцарь", "Святой рыцарь"],
+      "attackMin": [2, 4, 6, 10],
+      "attackMax": [3, 6, 8, 12],
+      "attackAverage": [2.5, 5, 7, 11],
+      "health": [10, 15, 25, 30],
+      "resources": [
+        { "gold": 5, "wood": 60, "grain": 0, "iron": 0 },
+        { "gold": 7, "wood": 67, "grain": 8, "iron": 0 },
+        { "gold": 10, "wood": 0, "grain": 12, "iron": 15 },
+        { "gold": 15, "wood": 0, "grain": 15, "iron": 20 }
+      ]
+    },
+    "cavalier": {
+      "name": [
+        "Лёгкая конница",
+        "Средняя конница",
+        "Тяжёлая конница",
+        "Элитная кавалерия"
+      ],
+      "attackMin": [3, 5, 8, 10],
+      "attackMax": [4, 7, 10, 12],
+      "attackAverage": [3.5, 6, 9, 11],
+      "health": [15, 25, 35, 40],
+      "resources": [
+        { "gold": 13, "wood": 85, "grain": 0, "iron": 0 },
+        { "gold": 19, "wood": 0, "grain": 31, "iron": 0 },
+        { "gold": 26, "wood": 0, "grain": 42, "iron": 2 },
+        { "gold": 35, "wood": 0, "grain": 45, "iron": 3 }
+      ]
+    },
+    "flying": {
+      "name": ["Пегас", "Серебряный пегас", "Золотой пегас", "Алмазный пегас"],
+      "attackMin": [4, 8, 10, 14],
+      "attackMax": [6, 10, 12, 16],
+      "attackAverage": [5, 9, 11, 15],
+      "health": [20, 30, 40, 60],
+      "resources": [
+        { "gold": 16, "wood": 118, "grain": 0, "iron": 0 },
+        { "gold": 20, "wood": 0, "grain": 42, "iron": 0 },
+        { "gold": 27, "wood": 0, "grain": 49, "iron": 3 },
+        { "gold": 40, "wood": 0, "grain": 40, "iron": 10 }
+      ]
+    },
+    "archer": {
+      "name": ["Лучник", "Арбалетчик", "Тяжелый арбалетчик", "Элитный стрелок"],
+      "attackMin": [25, 35, 45, 50],
+      "attackMax": [35, 45, 55, 60],
+      "attackAverage": [30, 40, 50, 55],
+      "health": [6, 10, 15, 15],
+      "resources": [
+        { "gold": 16, "wood": 158, "grain": 0, "iron": 0 },
+        { "gold": 26, "wood": 168, "grain": 15, "iron": 0 },
+        { "gold": 33, "wood": 0, "grain": 22, "iron": 32 },
+        { "gold": 35, "wood": 0, "grain": 25, "iron": 35 }
+      ]
+    },
+    "healer": {
+      "name": ["Послушник", "Монах", "Боевой монах", "Кардинал"],
+      "attackMin": [0, 1, 1, 1],
+      "attackMax": [1, 1, 2, 2],
+      "attackAverage": [0.5, 1, 1.5, 1.5],
+      "health": [10, 15, 20, 20],
+      "resurrection": [1, 2, 3, 4],
+      "resources": [
+        { "gold": 25, "wood": 0, "grain": 200, "iron": 35 },
+        { "gold": 35, "wood": 0, "grain": 300, "iron": 45 },
+        { "gold": 50, "wood": 0, "grain": 400, "iron": 60 },
+        { "gold": 60, "wood": 0, "grain": 450, "iron": 70 }
+      ]
+    },
+    "mercenary": {
+      "name": ["Разбойник", "Сорвиголова", "Мастер меча", "Элитный наемник"],
+      "attackMin": [3, 5, 7, 8],
+      "attackMax": [5, 7, 9, 10],
+      "attackAverage": [4, 6, 8, 9],
+      "health": [1, 1, 1, 1],
+      "resources": [
+        { "gold": 75, "wood": 0, "grain": 0, "iron": 0 },
+        { "gold": 90, "wood": 0, "grain": 0, "iron": 0 },
+        { "gold": 105, "wood": 0, "grain": 0, "iron": 0 },
+        { "gold": 120, "wood": 0, "grain": 0, "iron": 0 }
+      ]
+    },
+    "mage": {
+      "name": ["Ученик мага", "Маг", "Архимаг", "Повелитель стихий"],
+      "attackMin": [3, 4, 5, 8],
+      "attackMax": [3, 4, 5, 8],
+      "attackAverage": [3, 4, 5, 8],
+      "health": [5, 10, 15, 20],
+      "towersSuppression": [10, 20, 30, 40],
+      "resources": [
+        { "gold": 80, "wood": 0, "grain": 0, "iron": 107 },
+        { "gold": 118, "wood": 0, "grain": 0, "iron": 150 },
+        { "gold": 190, "wood": 0, "grain": 0, "iron": 200 },
+        { "gold": 250, "wood": 0, "grain": 0, "iron": 250 }
+      ]
+    }
+  },
+  "monsters": {
+    "porter": {
+      "name": [
+        "Малый собиратель",
+        "Средний собиратель",
+        "Гигантский собиратель"
+      ],
+      "attackMin": [0, 0, 0],
+      "attackMax": [0, 0, 0],
+      "attackAverage": [0, 0, 0, 0],
+      "health": [8, 12, 15],
+      "capacity": [50, 50, 50],
+      "resources": [
+        { "gold": 3, "wood": 25, "grain": 0, "iron": 0 },
+        { "gold": 4, "wood": 12, "grain": 4, "iron": 0 },
+        { "gold": 5, "wood": 0, "grain": 6, "iron": 1 }
+      ]
+    },
+    "swordsman": {
+      "name": ["Глиняный голем", "Ледяной голем", "Железный голем"],
+      "attackMin": [2, 4, 6],
+      "attackMax": [3, 6, 8],
+      "attackAverage": [2.5, 5, 7],
+      "health": [10, 15, 25],
+      "resources": [
+        { "gold": 5, "wood": 60, "grain": 0, "iron": 0 },
+        { "gold": 7, "wood": 67, "grain": 8, "iron": 0 },
+        { "gold": 10, "wood": 0, "grain": 12, "iron": 15 }
+      ]
+    },
+    "cavalier": {
+      "name": ["Орк на ворге", "Орк-варвар", "Боевой орк"],
+      "attackMin": [3, 5, 8],
+      "attackMax": [4, 7, 10],
+      "attackAverage": [3.5, 6, 9],
+      "health": [15, 25, 35],
+      "resources": [
+        { "gold": 13, "wood": 85, "grain": 0, "iron": 0 },
+        { "gold": 19, "wood": 0, "grain": 31, "iron": 0 },
+        { "gold": 26, "wood": 0, "grain": 42, "iron": 2 }
+      ]
+    },
+    "flying": {
+      "name": ["Болотная горгулья", "Скальная горгулья", "Огненная горгулья"],
+      "attackMin": [4, 8, 10],
+      "attackMax": [6, 10, 12],
+      "attackAverage": [5, 9, 11],
+      "health": [20, 30, 40],
+      "resources": [
+        { "gold": 16, "wood": 118, "grain": 0, "iron": 0 },
+        { "gold": 20, "wood": 0, "grain": 42, "iron": 0 },
+        { "gold": 27, "wood": 0, "grain": 49, "iron": 3 }
+      ]
+    },
+    "archer": {
+      "name": ["Молодой иглозавр", "Иглозавр", "Ядовитый иглозавр"],
+      "attackMin": [25, 35, 45],
+      "attackMax": [35, 45, 55],
+      "attackAverage": [30, 40, 50],
+      "health": [6, 10, 15],
+      "resources": [
+        { "gold": 16, "wood": 158, "grain": 0, "iron": 0 },
+        { "gold": 26, "wood": 168, "grain": 15, "iron": 0 },
+        { "gold": 33, "wood": 0, "grain": 22, "iron": 32 }
+      ]
+    },
+    "healer": {
+      "name": ["Ведьма леса", "Ведьма воздуха", "Ведьма пекла"],
+      "attackMin": [0, 1, 1],
+      "attackMax": [1, 1, 2],
+      "attackAverage": [0.5, 1, 1.5],
+      "health": [10, 15, 20],
+      "resurrection": [1, 2, 3],
+      "resources": [
+        { "gold": 25, "wood": 0, "grain": 200, "iron": 35 },
+        { "gold": 35, "wood": 0, "grain": 300, "iron": 45 },
+        { "gold": 50, "wood": 0, "grain": 400, "iron": 60 }
+      ]
+    },
+    "mercenary": {
+      "name": ["Дух леса", "Дух воды", "Дух огня"],
+      "attackMin": [3, 5, 7],
+      "attackMax": [5, 7, 9],
+      "attackAverage": [4, 6, 8],
+      "health": [1, 1, 1],
+      "resources": [
+        { "gold": 75, "wood": 0, "grain": 0, "iron": 0 },
+        { "gold": 90, "wood": 0, "grain": 0, "iron": 0 },
+        { "gold": 105, "wood": 0, "grain": 0, "iron": 0 }
+      ]
+    },
+    "mage": {
+      "name": ["Деми-змееног", "Змееног", "Великий змееног"],
+      "attackMin": [3, 4, 5],
+      "attackMax": [3, 4, 5],
+      "attackAverage": [3, 4, 5],
+      "health": [5, 10, 15],
+      "towersSuppression": [10, 20, 30],
+      "resources": [
+        { "gold": 80, "wood": 0, "grain": 0, "iron": 107 },
+        { "gold": 118, "wood": 0, "grain": 0, "iron": 150 },
+        { "gold": 190, "wood": 0, "grain": 0, "iron": 200 }
+      ]
+    }
+  },
+  "castleMonsters": {
+    "porter": {
+      "name": [
+        "Малый собиратель",
+        "Средний собиратель",
+        "Гигантский собиратель"
+      ],
+      "attackMin": [0, 0, 0],
+      "attackMax": [0, 0, 0],
+      "attackAverage": [0, 0, 0, 0],
+      "health": [8, 12, 15],
+      "capacity": [50, 50, 50],
+      "resources": [
+        { "gold": 3, "wood": 25, "grain": 0, "iron": 0 },
+        { "gold": 4, "wood": 12, "grain": 4, "iron": 0 },
+        { "gold": 5, "wood": 0, "grain": 6, "iron": 1 }
+      ]
+    },
+    "swordsman": {
+      "name": ["Глиняный голем", "Ледяной голем", "Железный голем"],
+      "attackMin": [2, 4, 6],
+      "attackMax": [3, 6, 8],
+      "attackAverage": [2.5, 5, 7],
+      "health": [10, 15, 25],
+      "resources": [
+        { "gold": 5, "wood": 60, "grain": 0, "iron": 0 },
+        { "gold": 7, "wood": 67, "grain": 8, "iron": 0 },
+        { "gold": 10, "wood": 0, "grain": 12, "iron": 15 }
+      ]
+    },
+    "cavalier": {
+      "name": ["Орк на ворге", "Орк-варвар", "Боевой орк"],
+      "attackMin": [3, 5, 8],
+      "attackMax": [4, 7, 10],
+      "attackAverage": [3.5, 6, 9],
+      "health": [15, 25, 35],
+      "resources": [
+        { "gold": 13, "wood": 85, "grain": 0, "iron": 0 },
+        { "gold": 19, "wood": 0, "grain": 31, "iron": 0 },
+        { "gold": 26, "wood": 0, "grain": 42, "iron": 2 }
+      ]
+    },
+    "flying": {
+      "name": ["Болотная горгулья", "Скальная горгулья", "Огненная горгулья"],
+      "attackMin": [4, 8, 10],
+      "attackMax": [6, 10, 12],
+      "attackAverage": [5, 9, 11],
+      "health": [20, 30, 40],
+      "resources": [
+        { "gold": 16, "wood": 118, "grain": 0, "iron": 0 },
+        { "gold": 20, "wood": 0, "grain": 42, "iron": 0 },
+        { "gold": 27, "wood": 0, "grain": 49, "iron": 3 }
+      ]
+    },
+    "archer": {
+      "name": ["Молодой иглозавр", "Иглозавр", "Ядовитый иглозавр"],
+      "attackMin": [25, 35, 45],
+      "attackMax": [35, 45, 55],
+      "attackAverage": [30, 40, 50],
+      "health": [6, 10, 15],
+      "resources": [
+        { "gold": 16, "wood": 158, "grain": 0, "iron": 0 },
+        { "gold": 26, "wood": 168, "grain": 15, "iron": 0 },
+        { "gold": 33, "wood": 0, "grain": 22, "iron": 32 }
+      ]
+    },
+    "healer": {
+      "name": ["Ведьма леса", "Ведьма воздуха", "Ведьма пекла"],
+      "attackMin": [0, 1, 1],
+      "attackMax": [1, 1, 2],
+      "attackAverage": [0.5, 1, 1.5],
+      "health": [10, 15, 20],
+      "resurrection": [1, 2, 3],
+      "resources": [
+        { "gold": 25, "wood": 0, "grain": 200, "iron": 35 },
+        { "gold": 35, "wood": 0, "grain": 300, "iron": 45 },
+        { "gold": 50, "wood": 0, "grain": 400, "iron": 60 }
+      ]
+    },
+    "mercenary": {
+      "name": ["Дух леса", "Дух воды", "Дух огня"],
+      "attackMin": [3, 5, 7],
+      "attackMax": [5, 7, 9],
+      "attackAverage": [4, 6, 8],
+      "health": [1, 1, 1],
+      "resources": [
+        { "gold": 75, "wood": 0, "grain": 0, "iron": 0 },
+        { "gold": 90, "wood": 0, "grain": 0, "iron": 0 },
+        { "gold": 105, "wood": 0, "grain": 0, "iron": 0 }
+      ]
+    },
+    "mage": {
+      "name": ["Деми-змееног", "Змееног", "Великий змееног"],
+      "attackMin": [3, 4, 5],
+      "attackMax": [3, 4, 5],
+      "attackAverage": [3, 4, 5],
+      "health": [5, 10, 15],
+      "towersSuppression": [10, 20, 30],
+      "resources": [
+        { "gold": 80, "wood": 0, "grain": 0, "iron": 107 },
+        { "gold": 118, "wood": 0, "grain": 0, "iron": 150 },
+        { "gold": 190, "wood": 0, "grain": 0, "iron": 200 }
+      ]
+    }
+  }
+}

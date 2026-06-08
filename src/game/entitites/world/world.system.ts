@@ -1,10 +1,10 @@
 import { generateKingdomsData } from './world.model';
-import WORLD_TEMPLATE from './templates/arhon.json';
 import type { TerrainType } from '#game/entitites/kingdom/kingdom.types';
+import { ARHON } from './templates/arhon';
 
 export const worldSystem = {
   generateWorld: () => {
-    const worldRaw = generateKingdomsData(WORLD_TEMPLATE as TerrainType[][]);
+    const worldRaw = generateKingdomsData(ARHON as TerrainType[][]);
 
     return {
       isCreated: true,

@@ -1,3 +1,4 @@
+import { getKingdomFields, getKingdomRuinsCount } from '#/game/entitites/kingdom/kingdom.selectors';
 import type { Kingdom } from '#/game/entitites/kingdom/kingdom.types';
 import { worldSystem } from '#/game/entitites/world/world.system';
 import { select, useGameStore } from '#/store/gameStore';
@@ -14,8 +15,9 @@ export const startServer = (): ServerData => {
     useGameStore.setState((state) => ({ ...state, ...gameStore, isCreated: true }));
   }
   const kingdoms = Object.keys(select((state) => state.kingdoms));
+
   return {
     kingdoms,
-    playerKingdomId: Object.keys(select((state) => state.kingdoms))[4],
+    playerKingdomId: kingdoms[4],
   };
 };
