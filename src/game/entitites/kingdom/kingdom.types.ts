@@ -1,6 +1,6 @@
 export type Kingdom = {
   id: string;
-  fields: KingdomField['id'][];
+  fieldsIds: KingdomField['id'][];
 };
 
 export type KingdomField = {

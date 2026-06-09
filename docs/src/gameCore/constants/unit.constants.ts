@@ -1,12 +1,12 @@
 export const UNIT_TYPES_LIST = [
-  'porter',
-  'swordsman',
-  'cavalier',
-  'flying',
-  'archer',
-  'healer',
-  'mercenary',
-  'mage',
+  "porter",
+  "swordsman",
+  "cavalier",
+  "flying",
+  "archer",
+  "healer",
+  "mercenary",
+  "mage",
 ] as const;
 
 export const COMMON_UNIT_PROPERTIES = {
