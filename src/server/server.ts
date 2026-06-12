@@ -1,6 +1,6 @@
-import { getKingdomsIds } from '#/game/entitites/kingdom/kingdom.selectors';
 import type { Kingdom } from '#/game/entitites/kingdom/kingdom.types';
 import { worldSystem } from '#/game/entitites/world/world.system';
+import { ruinSpawnSystem } from '#/game/systems/ruinSpawnSystem';
 import { select, useGameStore } from '#/store/gameStore';
 
 export type ServerData = {
@@ -16,7 +16,7 @@ export const startServer = (): ServerData => {
   }
   const kingdoms = Object.keys(select((state) => state.kingdoms));
 
-  console.log(getKingdomsIds());
+  ruinSpawnSystem();
   return {
     kingdoms,
     playerKingdomId: kingdoms[4],

@@ -24,7 +24,7 @@ export const KingdomMap = () => {
   return (
     <div className={styles.container}>
       <div className={styles.map}>
-        {kingdom.fields.map((field, index) => {
+        {kingdom.fieldsIds.map((field, index) => {
           return (
             <div
               key={field}

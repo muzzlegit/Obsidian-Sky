@@ -13,6 +13,8 @@ export type KingdomField = {
   };
 };
 
+export type FieldDomainPlace = 'world' | 'underworld';
+
 export type KingdomFields = Record<KingdomField['id'], KingdomField>;
 
 export type FieldDomain = {

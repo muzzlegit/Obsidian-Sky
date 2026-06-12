@@ -99,3 +99,13 @@ export function generateRandomLevelRuin(): Ruin {
 
   return ruin;
 }
+
+/**
+ * Генерує задану кількість випадкових руїн.
+ *
+ * @param count - кількість руїн для генерації
+ * @returns масив руїн
+ */
+export function generateRandomRuins(count: number): Ruin[] {
+  return Array.from({ length: count }, () => generateRandomLevelRuin());
+}

@@ -1,6 +1,6 @@
-import { generateId } from '#shared/utils/generateId';
 import type { KingdomFields, TerrainType } from '#game/entitites/kingdom/kingdom.types';
 import type { WorldKingdoms } from '#game/entitites/world/world.types';
+import { generateId } from '#shared/utils/generateId';
 
 export const generateKingdomsData = (worldData: TerrainType[][]) => {
   const kingdomsQuantity = worldData?.length ?? 0;
@@ -13,7 +13,7 @@ export const generateKingdomsData = (worldData: TerrainType[][]) => {
     fields = { ...fields, ...fieldsData };
     kingdoms[kingdomId] = {
       id: kingdomId,
-      fields: [...Object.keys(fieldsData)],
+      fieldsIds: [...Object.keys(fieldsData)],
     };
   }
   return { kingdoms, fields };
