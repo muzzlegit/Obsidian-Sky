@@ -1,6 +1,6 @@
-import type { Race } from '#game/entitites/race/race.types';
-import type { Unit, UnitType } from '#game/entitites/unit/unit.types';
-import type { Resources } from '#game/entitites/resource/resource.types';
+import type { Race } from '#game/entities/race/race.types';
+import type { Unit, UnitType } from '#game/entities/unit/unit.types';
+import type { Resources } from '#game/entities/resource/resource.types';
 
 export type RuinLevel = 1 | 2 | 3 | 4 | 5 | 6;
 
@@ -21,3 +21,5 @@ export type Ruin = {
   isHero?: boolean;
   heroType?: '1' | '2';
 };
+
+export type RuinsStore = Record<Ruin['id'], Ruin>;

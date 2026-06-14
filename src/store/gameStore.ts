@@ -1,16 +1,15 @@
+import type { KingdomFields, Player, RuinsStore, WorldKingdoms } from '#/game/game.types';
 import { create } from 'zustand';
 import { createJSONStorage, devtools, persist } from 'zustand/middleware';
 import { immer } from 'zustand/middleware/immer';
 // TYPES
-import type { KingdomFields } from '#/game/entitites/kingdom/kingdom.types';
-import type { Player } from '#/game/entitites/player/player.types';
-import type { WorldKingdoms } from '#/game/entitites/world/world.types';
 
 export type RootStore = {
   isCreated: boolean;
   player: Player | null;
   kingdoms: WorldKingdoms;
   kingdomsFields: KingdomFields;
+  ruins: RuinsStore;
 };
 export const useGameStore = create<RootStore>()(
   devtools(
@@ -34,6 +33,7 @@ export const useGameStore = create<RootStore>()(
         },
         kingdoms: {},
         kingdomsFields: {},
+        ruins: {},
       })),
       {
         name: 'GAME_DB',
@@ -44,6 +44,7 @@ export const useGameStore = create<RootStore>()(
           player: state.player,
           kingdoms: state.kingdoms,
           kingdomsFields: state.kingdomsFields,
+          ruins: state.ruins,
         }),
       },
     ),

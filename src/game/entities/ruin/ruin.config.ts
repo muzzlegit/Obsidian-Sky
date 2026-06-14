@@ -1,9 +1,9 @@
-import type { Unit } from "#game/entitites/unit/unit.types";
+import type { Unit } from '#game/entities/unit/unit.types';
 
 export type SquadUnitConfig = {
   countMin: number;
   countMax: number;
-  level: Unit["level"];
+  level: Unit['level'];
 };
 
 export type RuinConfig = typeof ruinConfig;

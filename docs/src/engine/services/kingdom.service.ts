@@ -1,5 +1,5 @@
-import {
   FIELDS_QUANTITY,
+  import {
   MAX_RUINS_PER_KINGDOM,
   type Kingdom,
   type Ruin,

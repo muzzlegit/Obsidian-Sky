@@ -13,6 +13,33 @@
   gap: 4px;
 }
 .field {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border: 1px solid gray;
+}
+
+.fieldIndex {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 4px 0 0 4px;
+  color: black;
+  font-weight: 700;
   font-size: 12px;
+}
+
+.ruin {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid wheat;
+  border-radius: 50%;
+  background-color: darkkhaki;
+  font-weight: 900;
+  color: black;
+  box-shadow: 0px 0px 8px 1px black;
 }

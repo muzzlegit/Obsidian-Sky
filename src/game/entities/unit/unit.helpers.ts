@@ -1,4 +1,4 @@
-import { RACE_TO_FRACTION } from '#game/entitites/race/race.constants';
+import { RACE_TO_FRACTION } from '#game/entities/race/race.constants';
 import unitsData from './data/units.json';
 import { ADDITION_UNIT_PROPERTIES, COMMON_UNIT_PROPERTIES } from './unit.constants';
 import type { Unit, UnitRawData } from './unit.types';
@@ -37,7 +37,7 @@ export function generateUnit(
     type,
     level,
     race,
-    fraction: RACE_TO_FRACTION[race],
+    fraction: RACE_TO_FRACTION[race]!,
     quantity,
     attack,
     attackMax: attackMax[level - 1],

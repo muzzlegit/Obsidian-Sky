@@ -19,19 +19,25 @@ export const KingdomMap = () => {
   console.info('RENDER:[KingdomMap]');
   const { kingdom, coordinates, handleDecreaseCoordinate, handleIncreaseCoordinate } = useKingdom();
   const kingdomsFields = useGameStore((state) => state.kingdomsFields);
+  const ruins = useGameStore((state) => state.ruins);
   if (!kingdom) return;
 
   return (
     <div className={styles.container}>
       <div className={styles.map}>
-        {kingdom.fieldsIds.map((field, index) => {
+        {kingdom.fieldsIds.map((fieldId, index) => {
+          const field = kingdomsFields[fieldId];
+          const worldDomain = field.domains.world;
           return (
             <div
-              key={field}
-              style={{ backgroundColor: colors[kingdomsFields[field].terrain] }}
+              key={field.id}
+              style={{ backgroundColor: colors[field.terrain] }}
               className={styles.field}
             >
-              <div>{index + 1}</div>
+              {worldDomain ? (
+                <div className={styles.ruin}>{ruins[worldDomain.id].level}</div>
+              ) : null}
+              <div className={styles.fieldIndex}>{index + 1}</div>
             </div>
           );
         })}
