@@ -1,21 +1,38 @@
-import { addDomainToKingdom } from '../entities/kingdom/kingdom.entities';
-import {
-  getKingdomRuinsCountMap,
-  getRandomFreeKingdomFieldId,
-} from '../entities/kingdom/kingdom.selectors';
-import { MAX_RUINS_PER_KINGDOM } from '../entities/ruin/ruin.constants';
-import { addRuinToStore } from '../entities/ruin/ruin.entities';
-import { generateRandomRuins } from '../entities/ruin/ruin.helpers';
+import type { Kingdom } from '../domain/kingdom/kingdom.types';
+import { MAX_RUINS_PER_KINGDOM } from '../domain/ruin/ruin.constants';
+import { generateRandomRuins } from '../domain/ruin/ruin.entity';
+import { EVENT_BUS } from '../infrastructure/eventBus/engineEventBus/eventBus';
 
-export async function ruinSpawnSystem() {
-  const ruinsCountMap = await getKingdomRuinsCountMap();
-  Object.entries(ruinsCountMap).forEach(([kingdomId, ruinsCount]) => {
-    const ruins = generateRandomRuins(MAX_RUINS_PER_KINGDOM - ruinsCount);
-    ruins.forEach((ruin) => {
-      const id = await getRandomFreeKingdomFieldId(kingdomId, 'world');
-      if (!id) return;
-      // addRuinToStore(ruin);
-      addDomainToKingdom(id, { type: ruin.type, id: ruin.id });
-    });
-  });
+export function ruinSpawnSystem() {
+  const kingdoms = EVENT_BUS.query('kingdom:getKingdomsStore');
+  const kingdomsFields = EVENT_BUS.query('kingdom:getFieldsStore');
+
+  // Вирховуємо кількість руїн в королівстві, якщо менше максимальної кількості генеруємо і додаємо
+  let ruinsCount: number = 0;
+  // Перебираємо королівства
+  for (const kingdomId in kingdoms) {
+    const kingdom = kingdoms[kingdomId as Kingdom['id']];
+    // Перебираємо поля в королівстві
+    for (const fieldId of kingdom.fieldsIds) {
+      const field = kingdomsFields[fieldId];
+      const domain = field?.domains.world;
+      // Рахуємо руїни
+      if (domain?.type === 'ruin') {
+        ruinsCount++;
+      }
+    }
+    if (ruinsCount < MAX_RUINS_PER_KINGDOM) {
+      // Генеруємо необхідну кількість руїн
+      const ruins = generateRandomRuins(MAX_RUINS_PER_KINGDOM - ruinsCount);
+      // Додаємо руїни у світ
+      ruins.forEach((ruin) => {
+        const id = EVENT_BUS.query('kingdom:pickRandomAvailableFieldId', {
+          kingdomId,
+          layer: 'world',
+        });
+        if (!id) return;
+        EVENT_BUS.emit('ruin:spawned', { ruin, fieldId: id });
+      });
+    }
+  }
 }

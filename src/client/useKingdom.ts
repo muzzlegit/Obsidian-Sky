@@ -1,4 +1,4 @@
-import { select } from '#/store/gameStore';
+import { kingdomQuery } from '#/store/queries/kingdom.query';
 import { selectGameUI, useGameUI } from './store/gameUI';
 
 export const useKingdom = () => {
@@ -6,7 +6,7 @@ export const useKingdom = () => {
 
   const kingdoms = selectGameUI((state) => state.kingdoms);
 
-  const kingdom = select((state) => state.kingdoms[currentKingdomId]);
+  const kingdom = kingdomQuery.getKingdomById(currentKingdomId);
 
   const coordinates = kingdoms.find((kingdom) => kingdom.id === currentKingdomId).coordinates;
 

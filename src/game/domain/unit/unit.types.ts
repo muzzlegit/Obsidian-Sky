@@ -1,4 +1,4 @@
-import type { Fraction, Race } from '#game/entities/race/race.types';
+import type { Fraction, Race } from '../race/race.types.ts';
 import type { UNIT_TYPES_LIST } from './unit.constants.ts';
 
 export type UnitType = (typeof UNIT_TYPES_LIST)[number];

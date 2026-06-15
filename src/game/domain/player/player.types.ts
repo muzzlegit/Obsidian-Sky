@@ -1,6 +1,6 @@
-import type { Fraction, PlayerRace } from '#game/entitites/race/race.types';
-import type { Obsidian } from '#game/entitites/obsidian/obsidian.types';
-import type { Resources } from '#game/entitites/resource/resource.types';
+import type { Obsidian } from '../obsidian/obsidian.types';
+import type { Fraction, PlayerRace } from '../race/race.types';
+import type { Resources } from '../resource/resource.types';
 
 export type Player = {
   id: string;

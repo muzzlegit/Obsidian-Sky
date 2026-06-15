@@ -1,6 +1,6 @@
-import { generateKingdomsData } from './world.model';
-import type { TerrainType } from '#game/entitites/kingdom/kingdom.types';
+import type { TerrainType } from '../kingdom/kingdom.types';
 import { ARHON } from './templates/arhon';
+import { generateKingdomsData } from './world.model';
 
 export const worldSystem = {
   generateWorld: () => {

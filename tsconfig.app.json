@@ -25,7 +25,7 @@
       "#game/*": ["./src/game/*"],
       "#shared/*": ["./src/shared/*"]
     },
-
+    "noUncheckedIndexedAccess": true,
     /* Linting */
     "noUnusedLocals": true,
     "noUnusedParameters": true,

@@ -1,6 +1,6 @@
-import type { Race } from '#game/entities/race/race.types';
-import type { Unit, UnitType } from '#game/entities/unit/unit.types';
-import type { Resources } from '#game/entities/resource/resource.types';
+import type { Race } from '../race/race.types';
+import type { Resources } from '../resource/resource.types';
+import type { Unit, UnitType } from '../unit/unit.types';
 
 export type RuinLevel = 1 | 2 | 3 | 4 | 5 | 6;
 

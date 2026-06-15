@@ -1,4 +1,4 @@
-import type { KingdomFields, Player, RuinsStore, WorldKingdoms } from '#/game/game.types';
+import type { KingdomFields, Player, RuinsStore, WorldKingdoms } from '#/game/domain/game.public';
 import { create } from 'zustand';
 import { createJSONStorage, devtools, persist } from 'zustand/middleware';
 import { immer } from 'zustand/middleware/immer';
@@ -50,5 +50,3 @@ export const useGameStore = create<RootStore>()(
     ),
   ),
 );
-export const select = <T>(selector: (state: RootStore) => T): T =>
-  selector(useGameStore.getState());

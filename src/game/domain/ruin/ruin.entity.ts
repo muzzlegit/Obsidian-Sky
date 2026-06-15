@@ -1,6 +1,6 @@
 import { generateId } from '#/shared/utils/generateId';
 import { randomInt } from '#/shared/utils/randomInt';
-import { generateUnit } from '#game/entities/unit/unit.helpers';
+import { generateUnit } from '../unit/unit.helpers';
 import { ruinConfig } from './ruin.config';
 import { MAX_COMMON_RUIN_LEVEL, MIN_COMMON_RUIN_LEVEL } from './ruin.constants';
 import type { Ruin } from './ruin.types';

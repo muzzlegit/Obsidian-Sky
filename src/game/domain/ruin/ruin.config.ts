@@ -1,4 +1,4 @@
-import type { Unit } from '#game/entities/unit/unit.types';
+import type { Unit } from '../unit/unit.types';
 
 export type SquadUnitConfig = {
   countMin: number;
