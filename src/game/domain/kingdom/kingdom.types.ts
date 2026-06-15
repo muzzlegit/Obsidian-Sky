@@ -29,6 +29,12 @@ export type Domain = {
 
 export type DomainType = 'ruin';
 
+export type TimedDomain = {
+  id: string;
+  type: DomainType;
+  expiresAt: number;
+};
+
 export type TerrainType =
   | 'cursedForest'
   | 'deadLand'

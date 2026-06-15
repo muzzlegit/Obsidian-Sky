@@ -21,6 +21,6 @@ export const startServer = (): ServerData => {
   ruinSpawnSystem();
   return {
     kingdoms,
-    playerKingdomId: kingdoms[4],
+    playerKingdomId: kingdoms[4]!,
   };
 };

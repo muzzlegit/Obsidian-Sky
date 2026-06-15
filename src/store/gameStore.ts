@@ -1,4 +1,10 @@
-import type { KingdomFields, Player, RuinsStore, WorldKingdoms } from '#/game/domain/game.public';
+import type {
+  KingdomFields,
+  Player,
+  RuinsStore,
+  TimedDomain,
+  WorldKingdoms,
+} from '#/game/domain/game.public';
 import { create } from 'zustand';
 import { createJSONStorage, devtools, persist } from 'zustand/middleware';
 import { immer } from 'zustand/middleware/immer';
@@ -10,6 +16,7 @@ export type RootStore = {
   kingdoms: WorldKingdoms;
   kingdomsFields: KingdomFields;
   ruins: RuinsStore;
+  timedDomains: TimedDomain[];
 };
 export const useGameStore = create<RootStore>()(
   devtools(
@@ -34,6 +41,7 @@ export const useGameStore = create<RootStore>()(
         kingdoms: {},
         kingdomsFields: {},
         ruins: {},
+        timedDomains: [],
       })),
       {
         name: 'GAME_DB',
@@ -45,6 +53,7 @@ export const useGameStore = create<RootStore>()(
           kingdoms: state.kingdoms,
           kingdomsFields: state.kingdomsFields,
           ruins: state.ruins,
+          timedDomains: state.timedDomains,
         }),
       },
     ),

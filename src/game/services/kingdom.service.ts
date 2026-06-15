@@ -1,13 +1,13 @@
 import { getRandomItem } from '#/shared/utils/getRandomItem';
 import { useGameStore } from '#/store/gameStore';
-import type { WorldKingdoms } from '../game.public';
 import type {
   Domain,
   FieldDomainPlace,
   Kingdom,
   KingdomField,
   KingdomFields,
-} from './kingdom.types';
+  WorldKingdoms,
+} from '../domain/game.public';
 
 // GET
 /**
@@ -24,7 +24,7 @@ function getKingdomsStore(): WorldKingdoms {
 /**
  */
 function getField(fieldId: KingdomField['id']): KingdomField {
-  return useGameStore.getState().kingdomsFields[fieldId];
+  return useGameStore.getState().kingdomsFields[fieldId]!;
 }
 
 /**
@@ -34,12 +34,12 @@ function getField(fieldId: KingdomField['id']): KingdomField {
  *
  * @see useGameStore
  */
-function getKingdomFields(kingdomId: Kingdom['id']) {
+function getKingdomFields(kingdomId: Kingdom['id']): KingdomField[] {
   const { kingdoms, kingdomsFields } = useGameStore.getState();
   const kingdom = kingdoms[kingdomId];
   if (!kingdom) return [] as KingdomField[];
 
-  return kingdom.fieldsIds.map((id) => kingdomsFields[id]).filter((field) => Boolean(field));
+  return kingdom.fieldsIds.map((id) => kingdomsFields[id]!).filter((field) => Boolean(field));
 }
 
 /**
@@ -67,7 +67,10 @@ function pickRandomAvailableFieldId({
   layer: FieldDomainPlace;
 }) {
   const fields = getKingdomFields(kingdomId);
-  const freeFields = fields.filter((field) => !field.domains[layer]).map((field) => field.id);
+  const freeFields = fields
+    .filter((field): field is KingdomField => !!field && !field.domains[layer])
+    .map((field) => field.id);
+
   return getRandomItem(freeFields);
 }
 
@@ -99,14 +102,54 @@ function setField(kingdomField: KingdomField): boolean {
 function addDomainToKingdom(fieldId: KingdomField['id'], domain: Domain) {
   const layer = {
     ruin: 'world',
-  };
+  } as const;
+
   const field = getField(fieldId);
   if (!field) {
     return null;
   }
-  const { domains, ...rest } = field;
-  const updatedField = { ...rest, domains: { ...domains, [layer[domain.type]]: domain } };
-  setField(updatedField);
+
+  const targetLayer = layer[domain.type];
+
+  if (!targetLayer) {
+    return null;
+  }
+
+  setField({
+    ...field,
+    domains: {
+      ...field.domains,
+      [targetLayer]: domain,
+    },
+  });
+}
+
+function removeDomainFromKingdom(fieldId: KingdomField['id'], domain: Domain) {
+  const layer = {
+    ruin: 'world',
+  } as const;
+
+  const field = getField(fieldId);
+  if (!field) {
+    return null;
+  }
+  const targetLayer = layer[domain.type];
+
+  if (!targetLayer) {
+    return null;
+  }
+
+  if (field.domains[targetLayer]?.id !== domain.id) {
+    return null;
+  }
+
+  setField({
+    ...field,
+    domains: {
+      ...field.domains,
+      [targetLayer]: null,
+    },
+  });
 }
 
 export const kingdomService = {
@@ -116,5 +159,6 @@ export const kingdomService = {
   getField,
   setField,
   addDomainToKingdom,
+  removeDomainFromKingdom,
   pickRandomAvailableFieldId,
 };
