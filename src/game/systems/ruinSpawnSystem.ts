@@ -1,3 +1,4 @@
+import { kingdomEntity } from '../domain/kingdom/kingdom.entity';
 import type { Kingdom } from '../domain/kingdom/kingdom.types';
 import { MAX_RUINS_PER_KINGDOM } from '../domain/ruin/ruin.constants';
 import { generateRandomRuins } from '../domain/ruin/ruin.entity';
@@ -31,7 +32,10 @@ export function ruinSpawnSystem() {
           layer: 'world',
         });
         if (!id) return;
-        EVENT_BUS.emit('ruin:spawned', { ruin, fieldId: id });
+        EVENT_BUS.emit('ruin:spawned', {
+          ruin,
+          location: { fieldId: id, layer: kingdomEntity.getDomainLayer(ruin.type) },
+        });
       });
     }
   }

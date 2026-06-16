@@ -1,4 +1,4 @@
-import type { Domain } from './kingdom.types';
+import type { Domain, DomainLayer, DomainType } from './kingdom.types';
 
 function toDomainRef<
   T extends {
@@ -12,6 +12,15 @@ function toDomainRef<
   };
 }
 
+function getDomainLayer(domainType: DomainType): DomainLayer {
+  const layer = {
+    ruin: 'world',
+  } as const;
+
+  return layer[domainType];
+}
+
 export const kingdomEntity = {
   toDomainRef,
+  getDomainLayer,
 };

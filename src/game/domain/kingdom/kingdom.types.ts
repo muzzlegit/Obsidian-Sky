@@ -1,3 +1,5 @@
+import type { Ruin } from '../game.public';
+
 export type Kingdom = {
   id: string;
   fieldsIds: KingdomField['id'][];
@@ -29,10 +31,19 @@ export type Domain = {
 
 export type DomainType = 'ruin';
 
+export type DomainEntity = Ruin;
+
+export type DomainLayer = keyof KingdomField['domains'];
+
 export type TimedDomain = {
   id: string;
-  type: DomainType;
   expiresAt: number;
+  location: DomainLocation;
+};
+
+export type DomainLocation = {
+  fieldId: KingdomField['id'];
+  layer: DomainLayer;
 };
 
 export type TerrainType =

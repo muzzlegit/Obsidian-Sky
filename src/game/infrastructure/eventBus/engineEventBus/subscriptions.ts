@@ -1,4 +1,3 @@
-import { kingdomEntity } from '#/game/domain/kingdom/kingdom.entity';
 import { kingdomService } from '#/game/services/kingdom.service';
 import { ruinService } from '#/game/services/ruin.service';
 import { timedDomainService } from '#/game/services/timedDomain.service';
@@ -14,19 +13,28 @@ export function registerGameEvents() {
     'kingdom:pickRandomAvailableFieldId',
     kingdomService.pickRandomAvailableFieldId,
   );
+  EVENT_BUS.registerQuery('kingdom:getDomain', kingdomService.getDomain);
+  // TIMED DOMAINS
+  EVENT_BUS.registerQuery(
+    'timedDomains:getTimedDomainsStore',
+    timedDomainService.getTimedDomainsStore,
+  );
   // RUIN
-  EVENT_BUS.on('ruin:spawned', ({ ruin, fieldId }) => {
+  EVENT_BUS.on('ruin:spawned', ({ ruin, location }) => {
     ruinService.addRuinToStore(ruin);
-    kingdomService.addDomainToKingdom(fieldId, kingdomEntity.toDomainRef(ruin));
-    timedDomainService.addTimedDomainToStore({
-      id: ruin.id,
-      type: ruin.type,
-      lifeTime: ruin.lifeTime,
+    kingdomService.addDomainToKingdom({
+      domain: ruin,
+      location,
     });
+    timedDomainService.addTimedDomainToStore({ domainEntity: ruin, location });
   });
-  EVENT_BUS.on('ruin:expired', ({ ruin, fieldId }) => {
-    ruinService.removeRuinFromStore(ruin.id);
-    kingdomService.removeDomainFromKingdom(fieldId, ruin);
-    timedDomainService.removeTimedDomainFromStore(ruin['id']);
+
+  EVENT_BUS.on('ruin:expired', ({ ruinId, location }) => {
+    ruinService.removeRuinFromStore(ruinId);
+    kingdomService.removeDomainFromKingdom({
+      domainId: ruinId,
+      location,
+    });
+    timedDomainService.removeTimedDomainFromStore(ruinId);
   });
 }

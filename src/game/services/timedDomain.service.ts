@@ -1,22 +1,20 @@
 import { useGameStore } from '#/store/gameStore';
-import type { DomainType, TimedDomain } from '../domain/game.public';
+import type { DomainEntity, DomainLocation, TimedDomain } from '../domain/game.public';
 
 function getTimedDomainsStore(): TimedDomain[] {
   return useGameStore.getState().timedDomains;
 }
 
 function addTimedDomainToStore({
-  id,
-  type,
-  lifeTime,
+  domainEntity,
+  location,
 }: {
-  id: string;
-  lifeTime: number;
-  type: DomainType;
+  domainEntity: DomainEntity;
+  location: DomainLocation;
 }) {
-  const expiresAt = lifeTime + Date.now();
+  const expiresAt = domainEntity.lifeTime + Date.now();
   useGameStore.setState((state) => {
-    state.timedDomains.push({ id, type, expiresAt });
+    state.timedDomains.push({ id: domainEntity.id, expiresAt, location });
   });
 }
 

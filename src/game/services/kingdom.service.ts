@@ -2,6 +2,7 @@ import { getRandomItem } from '#/shared/utils/getRandomItem';
 import { useGameStore } from '#/store/gameStore';
 import type {
   Domain,
+  DomainLocation,
   FieldDomainPlace,
   Kingdom,
   KingdomField,
@@ -74,6 +75,12 @@ function pickRandomAvailableFieldId({
   return getRandomItem(freeFields);
 }
 
+function getDomain(location: DomainLocation): Domain {
+  const field = getField(location.fieldId);
+  if (!field || !field.domains) return;
+  return field.domains[location.layer];
+}
+
 // SET
 
 /**
@@ -99,19 +106,10 @@ function setField(kingdomField: KingdomField): boolean {
  * @param domain
  * @returns
  */
-function addDomainToKingdom(fieldId: KingdomField['id'], domain: Domain) {
-  const layer = {
-    ruin: 'world',
-  } as const;
-
+function addDomainToKingdom({ domain, location }: { domain: Domain; location: DomainLocation }) {
+  const { fieldId, layer } = location;
   const field = getField(fieldId);
   if (!field) {
-    return null;
-  }
-
-  const targetLayer = layer[domain.type];
-
-  if (!targetLayer) {
     return null;
   }
 
@@ -119,27 +117,26 @@ function addDomainToKingdom(fieldId: KingdomField['id'], domain: Domain) {
     ...field,
     domains: {
       ...field.domains,
-      [targetLayer]: domain,
+      [layer]: domain,
     },
   });
 }
 
-function removeDomainFromKingdom(fieldId: KingdomField['id'], domain: Domain) {
-  const layer = {
-    ruin: 'world',
-  } as const;
+function removeDomainFromKingdom({
+  domainId,
+  location,
+}: {
+  domainId: string;
+  location: DomainLocation;
+}) {
+  const { fieldId, layer } = location;
 
   const field = getField(fieldId);
   if (!field) {
     return null;
   }
-  const targetLayer = layer[domain.type];
 
-  if (!targetLayer) {
-    return null;
-  }
-
-  if (field.domains[targetLayer]?.id !== domain.id) {
+  if (field.domains[layer]?.id !== domainId) {
     return null;
   }
 
@@ -147,7 +144,7 @@ function removeDomainFromKingdom(fieldId: KingdomField['id'], domain: Domain) {
     ...field,
     domains: {
       ...field.domains,
-      [targetLayer]: null,
+      [layer]: null,
     },
   });
 }
@@ -158,6 +155,7 @@ export const kingdomService = {
   getFieldsStore,
   getField,
   setField,
+  getDomain,
   addDomainToKingdom,
   removeDomainFromKingdom,
   pickRandomAvailableFieldId,
