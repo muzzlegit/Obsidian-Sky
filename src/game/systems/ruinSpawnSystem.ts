@@ -22,6 +22,7 @@ export function ruinSpawnSystem() {
         ruinsCount++;
       }
     }
+    console.log(ruinsCount);
     if (ruinsCount < MAX_RUINS_PER_KINGDOM) {
       // Генеруємо необхідну кількість руїн
       const ruins = generateRandomRuins(MAX_RUINS_PER_KINGDOM - ruinsCount);
@@ -38,5 +39,6 @@ export function ruinSpawnSystem() {
         });
       });
     }
+    ruinsCount = 0;
   }
 }

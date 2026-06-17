@@ -8,7 +8,9 @@ function addRuinToStore(ruin: Ruin) {
 }
 
 function removeRuinFromStore(ruinId: Ruin['id']) {
-  useGameStore.setState((state) => delete state.ruins[ruinId]);
+  useGameStore.setState((state) => {
+    delete state.ruins[ruinId];
+  });
 }
 
 export const ruinService = {

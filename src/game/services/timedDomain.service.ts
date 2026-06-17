@@ -20,7 +20,7 @@ function addTimedDomainToStore({
 
 function removeTimedDomainFromStore(timedDomainId: TimedDomain['id']) {
   useGameStore.setState((state) => {
-    state.timedDomains.filter((domain) => domain.id !== timedDomainId);
+    state.timedDomains = state.timedDomains.filter((domain) => domain.id !== timedDomainId);
   });
 }
 

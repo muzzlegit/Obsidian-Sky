@@ -8,6 +8,7 @@ import './client/styles/variables.css';
 // GLOBAL STYLES
 import './client/styles/global.css';
 
+
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <App />
