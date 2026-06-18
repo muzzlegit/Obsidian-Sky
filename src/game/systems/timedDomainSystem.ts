@@ -3,6 +3,7 @@ import { EVENT_BUS } from '../infrastructure/eventBus/engineEventBus/eventBus';
 let timedDomainTimeoutId = null;
 
 export function timedDomainSystem() {
+  console.log('timedDomainSystem');
   // Очищаємо попередній таймер, якщо він був (захист від дублювання)
   if (timedDomainTimeoutId) {
     clearTimeout(timedDomainTimeoutId);
@@ -13,6 +14,9 @@ export function timedDomainSystem() {
   const now = Date.now();
 
   const expiredDomains = timedDomains.filter((d) => d.expiresAt <= now);
+
+  // Якщо немає володінь, завершуємо роботу
+  // if (!expiredDomains.length) return;
 
   // Видаляємо всі володіння, час яких ВЖЕ вийшов на цей момент
   if (expiredDomains.length > 0) {

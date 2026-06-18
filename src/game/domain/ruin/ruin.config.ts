@@ -9,7 +9,7 @@ export type SquadUnitConfig = {
 export type RuinConfig = typeof ruinConfig;
 export const ruinConfig = {
   1: {
-    lifeTime: 5000,
+    lifeTime: 500000,
     obsidian: { min: 1, max: 5 },
     squad: {
       porter: {
@@ -38,7 +38,7 @@ export const ruinConfig = {
     },
   },
   2: {
-    lifeTime: 8000,
+    lifeTime: 800000,
     obsidian: { min: 1, max: 10 },
     squad: {
       porter: {
@@ -67,7 +67,7 @@ export const ruinConfig = {
     },
   },
   3: {
-    lifeTime: 12000,
+    lifeTime: 1200000,
     obsidian: { min: 1, max: 15 },
     squad: {
       porter: {
@@ -111,7 +111,7 @@ export const ruinConfig = {
     },
   },
   4: {
-    lifeTime: 20000,
+    lifeTime: 2000000,
     obsidian: { min: 1, max: 20 },
     squad: {
       porter: {
@@ -156,7 +156,7 @@ export const ruinConfig = {
     },
   },
   5: {
-    lifeTime: 25000,
+    lifeTime: 2500000,
     obsidian: { min: 1, max: 25 },
     squad: {
       porter: {
@@ -190,7 +190,7 @@ export const ruinConfig = {
     },
   },
   6: {
-    lifeTime: 30000,
+    lifeTime: 3000000,
     obsidian: { min: 1, max: 100 },
     squad: {
       porter: {

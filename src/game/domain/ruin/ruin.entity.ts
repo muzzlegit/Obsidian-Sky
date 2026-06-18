@@ -3,7 +3,7 @@ import { randomInt } from '#/shared/utils/randomInt';
 import { generateUnit } from '../unit/unit.helpers';
 import { ruinConfig } from './ruin.config';
 import { MAX_COMMON_RUIN_LEVEL, MIN_COMMON_RUIN_LEVEL } from './ruin.constants';
-import type { Ruin } from './ruin.types';
+import type { Ruin, RuinLevel } from './ruin.types';
 
 /**
  * Генерує сутність руїни із заданим рівнем і випадковою кількістю обсідіана.
@@ -85,16 +85,20 @@ export function generateRandomLevelRuin(): Ruin {
     }
   }
 
+  const behavior = getRuinBehaviorByLevel(randomLevel);
+  const isHero = behavior === 'aggressive';
+
   const ruin: Ruin = {
     id: generateId(`ruin_${randomLevel}`),
     type: 'ruin',
-    behavior: 'common',
+    behavior: behavior,
     level: randomLevel,
     race: 'monsters',
     lifeTime: config.lifeTime,
     obsidian,
     squad,
     resources: config.resources,
+    isHero,
   };
 
   return ruin;
@@ -108,4 +112,19 @@ export function generateRandomLevelRuin(): Ruin {
  */
 export function generateRandomRuins(count: number): Ruin[] {
   return Array.from({ length: count ?? 1 }, () => generateRandomLevelRuin());
+}
+
+/**
+ * Повертає тип руїни залежно від її рівня.
+ *
+ * Рівні 1-4 завжди common.
+ * Починаючи з 5 рівня aggressive випадає в середньому
+ * один раз на aggressiveEvery генерацій.
+ */
+export function getRuinBehaviorByLevel(level: RuinLevel, aggressiveEvery = 5): Ruin['behavior'] {
+  if (level < 5) {
+    return 'common';
+  }
+
+  return Math.floor(Math.random() * aggressiveEvery) === 0 ? 'aggressive' : 'common';
 }

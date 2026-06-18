@@ -2,7 +2,7 @@ import { registerGameEvents } from '#/game/infrastructure/eventBus/engineEventBu
 import { ruinSpawnSystem } from '#/game/systems/ruinSpawnSystem';
 import { timedDomainSystem } from '#/game/systems/timedDomainSystem';
 import { startServer } from '#/server/server';
-import { runControlledInterval } from '#/shared/utils/runControlledInterval';
+import { runPeriodically } from '#/shared/utils/runPeriodically';
 import { useGameStore } from '#/store/gameStore';
 import { useEffect } from 'react';
 import { KingdomMap } from './components/KingdomMap/KingdomMap';
@@ -11,9 +11,7 @@ import { useServerData } from './useServerData';
 const gameData = startServer();
 useServerData(gameData);
 registerGameEvents();
-// ruinSpawnSystem();
-// timedDomainSystem();
-runControlledInterval(40000, ruinSpawnSystem);
+runPeriodically(ruinSpawnSystem, 60, true);
 
 export const App = () => {
   console.info('RENDER:[App]');

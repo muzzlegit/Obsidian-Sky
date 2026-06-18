@@ -11,7 +11,7 @@ export type RuinSquad = Partial<Record<UnitType, Unit>>;
 export type Ruin = {
   id: string;
   type: 'ruin';
-  behavior: 'common' | 'aggresive';
+  behavior: 'common' | 'aggressive';
   level: RuinLevel;
   race: RuinRace;
   lifeTime: number;
@@ -23,3 +23,4 @@ export type Ruin = {
 };
 
 export type RuinsStore = Record<Ruin['id'], Ruin>;
+ 

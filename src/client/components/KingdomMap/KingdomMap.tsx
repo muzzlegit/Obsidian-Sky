@@ -35,7 +35,16 @@ export const KingdomMap = () => {
               className={styles.field}
             >
               {worldDomain ? (
-                <div className={styles.ruin}>{ruins[worldDomain.id].level}</div>
+                <div
+                  style={{
+                    backgroundColor:
+                      ruins[worldDomain.id].behavior !== 'aggressive' ? 'darkkhaki' : 'red',
+                  }}
+                  className={styles.ruin}
+                >
+                  <span>{ruins[worldDomain.id].level}</span>
+                  {ruins[worldDomain.id].isHero ? <div className={styles.dome} /> : null}
+                </div>
               ) : null}
               <div className={styles.fieldIndex}>{index + 1}</div>
             </div>
