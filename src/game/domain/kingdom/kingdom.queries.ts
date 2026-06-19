@@ -8,9 +8,8 @@ import type {
   KingdomField,
   KingdomFields,
   WorldKingdoms,
-} from '../domain/game.public';
+} from '../game.public';
 
-// GET
 /**
  * Повертає дані усіх королівст з БД
  *
@@ -18,13 +17,13 @@ import type {
  *
  * @see useGameStore
  */
-function getKingdomsStore(): WorldKingdoms {
+export function getKingdomsStore(): WorldKingdoms {
   return useGameStore.getState().kingdoms;
 }
 
 /**
  */
-function getField(fieldId: KingdomField['id']): KingdomField {
+export function getField(fieldId: KingdomField['id']): KingdomField {
   return useGameStore.getState().kingdomsFields[fieldId]!;
 }
 
@@ -35,7 +34,7 @@ function getField(fieldId: KingdomField['id']): KingdomField {
  *
  * @see useGameStore
  */
-function getKingdomFields(kingdomId: Kingdom['id']): KingdomField[] {
+export function getKingdomFields(kingdomId: Kingdom['id']): KingdomField[] {
   const { kingdoms, kingdomsFields } = useGameStore.getState();
   const kingdom = kingdoms[kingdomId];
   if (!kingdom) return [] as KingdomField[];
@@ -50,7 +49,7 @@ function getKingdomFields(kingdomId: Kingdom['id']): KingdomField[] {
  *
  * @see useGameStore
  */
-function getFieldsStore(): KingdomFields {
+export function getFieldsStore(): KingdomFields {
   return useGameStore.getState().kingdomsFields;
 }
 
@@ -60,7 +59,7 @@ function getFieldsStore(): KingdomFields {
  * @param layer
  * @returns
  */
-function pickRandomAvailableFieldId({
+export function pickRandomAvailableFieldId({
   kingdomId,
   layer,
 }: {
@@ -75,88 +74,8 @@ function pickRandomAvailableFieldId({
   return getRandomItem(freeFields);
 }
 
-function getDomain(location: DomainLocation): Domain {
+export function getDomain(location: DomainLocation): Domain {
   const field = getField(location.fieldId);
   if (!field || !field.domains) return;
   return field.domains[location.layer];
 }
-
-// SET
-
-/**
- * Перезаписує дані поля
- *
- * @param {KingdomField} kingdomField - дані поля
- *
- * @see useGameStore
- *
- * @returns {boolean}
- */
-function setField(kingdomField: KingdomField): boolean {
-  useGameStore.setState((state) => {
-    state.kingdomsFields[kingdomField.id] = kingdomField;
-  });
-
-  return true;
-}
-
-/**
- *
- * @param fieldId
- * @param domain
- * @returns
- */
-function addDomainToKingdom({ domain, location }: { domain: Domain; location: DomainLocation }) {
-  const { fieldId, layer } = location;
-  const field = getField(fieldId);
-  if (!field) {
-    return null;
-  }
-
-  setField({
-    ...field,
-    domains: {
-      ...field.domains,
-      [layer]: domain,
-    },
-  });
-}
-
-function removeDomainFromKingdom({
-  domainId,
-  location,
-}: {
-  domainId: string;
-  location: DomainLocation;
-}) {
-  const { fieldId, layer } = location;
-
-  const field = getField(fieldId);
-  if (!field) {
-    return null;
-  }
-
-  if (field.domains[layer]?.id !== domainId) {
-    return null;
-  }
-
-  setField({
-    ...field,
-    domains: {
-      ...field.domains,
-      [layer]: null,
-    },
-  });
-}
-
-export const kingdomService = {
-  getKingdomsStore,
-  getKingdomFields,
-  getFieldsStore,
-  getField,
-  setField,
-  getDomain,
-  addDomainToKingdom,
-  removeDomainFromKingdom,
-  pickRandomAvailableFieldId,
-};

@@ -1,12 +1,14 @@
 import { kingdomEntity } from '../domain/kingdom/kingdom.entity';
+import { kingdomService } from '../domain/kingdom/kingdom.service';
 import type { Kingdom } from '../domain/kingdom/kingdom.types';
 import { MAX_RUINS_PER_KINGDOM } from '../domain/ruin/ruin.constants';
 import { generateRandomRuins } from '../domain/ruin/ruin.entity';
-import { EVENT_BUS } from '../infrastructure/eventBus/engineEventBus/eventBus';
+import { EVENT_BUS } from '../infrastructure/eventBus/eventBus';
 
 export function ruinSpawnSystem() {
-  const kingdoms = EVENT_BUS.query('kingdom:getKingdomsStore');
-  const kingdomsFields = EVENT_BUS.query('kingdom:getFieldsStore');
+  const kingdoms = kingdomService.getKingdomsStore();
+
+  const kingdomsFields = kingdomService.getFieldsStore();
 
   // Вирховуємо кількість руїн в королівстві, якщо менше максимальної кількості генеруємо і додаємо
   let ruinsCount: number = 0;

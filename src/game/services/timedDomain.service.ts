@@ -1,6 +1,6 @@
 import { useGameStore } from '#/store/gameStore';
 import type { DomainEntity, DomainLocation, TimedDomain } from '../domain/game.public';
-import { EVENT_BUS } from '../infrastructure/eventBus/engineEventBus/eventBus';
+import { EVENT_BUS } from '../infrastructure/eventBus/eventBus';
 
 let timedDomainTimeoutId = null;
 

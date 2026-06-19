@@ -1,5 +1,5 @@
 import { useGameStore } from '#/store/gameStore';
-import type { Ruin } from '../domain/game.public';
+import type { Ruin } from '../game.public';
 
 function addRuinToStore(ruin: Ruin) {
   useGameStore.setState((state) => {
