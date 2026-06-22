@@ -1,4 +1,11 @@
-import { createTransport } from './core/transport';
-import type { AppRouter } from './core/transport.types';
+import { commands } from './transport.commands';
+import { createEvents } from './transport.events';
+import { queries } from './transport.queries';
 
-export const transport = createTransport<AppRouter>();
+export const transport = {
+  query: queries,
+
+  command: commands,
+
+  // event: createEvents()<Events>(),
+};

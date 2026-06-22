@@ -6,12 +6,12 @@ import { KingdomMap } from './components/KingdomMap/KingdomMap';
 import { useServerData } from './useServerData';
 
 const gameData = startServer();
-useServerData(gameData);
 registerGameSubscriptions();
 runPeriodically(ruinSpawnSystem, 60, true);
 
 export const App = () => {
   console.info('RENDER:[App]');
+  useServerData(gameData);
 
   return <div style={{ height: '100%' }}>{<KingdomMap />}</div>;
 };

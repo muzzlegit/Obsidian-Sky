@@ -1,10 +1,10 @@
 import { transport } from '#/transport';
-import { selectGameUI, useGameUI } from './store/gameUI';
+import { useGameUI } from './store/gameUI';
 
 export const useKingdom = () => {
   const currentKingdomId = useGameUI((state) => state.currentKingdomId);
 
-  const kingdoms = selectGameUI((state) => state.kingdoms);
+  const kingdoms = useGameUI.getState().kingdoms;
 
   const kingdomFields = transport.query.getKingdomFields(currentKingdomId);
 
