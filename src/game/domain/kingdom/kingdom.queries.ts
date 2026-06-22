@@ -35,11 +35,9 @@ export function getField(fieldId: KingdomField['id']): KingdomField {
  * @see useGameStore
  */
 export function getKingdomFields(kingdomId: Kingdom['id']): KingdomField[] {
-  const { kingdoms, kingdomsFields } = useGameStore.getState();
-  const kingdom = kingdoms[kingdomId];
-  if (!kingdom) return [] as KingdomField[];
+  const kingdomsFields = useGameStore.getState().kingdomsFields;
 
-  return kingdom.fieldsIds.map((id) => kingdomsFields[id]!).filter((field) => Boolean(field));
+  return Object.values(kingdomsFields).filter((field) => field.kingdomId === kingdomId);
 }
 
 /**
@@ -59,13 +57,7 @@ export function getFieldsStore(): KingdomFields {
  * @param layer
  * @returns
  */
-export function pickRandomAvailableFieldId({
-  kingdomId,
-  layer,
-}: {
-  kingdomId: Kingdom['id'];
-  layer: FieldDomainPlace;
-}) {
+export function getRandomAvailableFieldId(kingdomId: Kingdom['id'], layer: FieldDomainPlace) {
   const fields = getKingdomFields(kingdomId);
   const freeFields = fields
     .filter((field): field is KingdomField => !!field && !field.domains[layer])

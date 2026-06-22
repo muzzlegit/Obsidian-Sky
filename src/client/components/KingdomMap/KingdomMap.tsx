@@ -25,31 +25,32 @@ export const KingdomMap = () => {
   return (
     <div className={styles.container}>
       <div className={styles.map}>
-        {kingdom.fieldsIds.map((fieldId, index) => {
-          const field = kingdomsFields[fieldId];
-          const worldDomain = field.domains.world;
-          return (
-            <div
-              key={field.id}
-              style={{ backgroundColor: colors[field.terrain] }}
-              className={styles.field}
-            >
-              {worldDomain ? (
-                <div
-                  style={{
-                    backgroundColor:
-                      ruins[worldDomain.id].behavior !== 'aggressive' ? 'darkkhaki' : 'red',
-                  }}
-                  className={styles.ruin}
-                >
-                  <span>{ruins[worldDomain.id].level}</span>
-                  {ruins[worldDomain.id].isHero ? <div className={styles.dome} /> : null}
-                </div>
-              ) : null}
-              <div className={styles.fieldIndex}>{index + 1}</div>
-            </div>
-          );
-        })}
+        {Object.values(kingdomsFields)
+          .filter((field) => field.id === kingdom.id)
+          .map((field, index) => {
+            const worldDomain = field.domains.world;
+            return (
+              <div
+                key={field.id}
+                style={{ backgroundColor: colors[field.terrain] }}
+                className={styles.field}
+              >
+                {worldDomain ? (
+                  <div
+                    style={{
+                      backgroundColor:
+                        ruins[worldDomain.id].behavior !== 'aggressive' ? 'darkkhaki' : 'red',
+                    }}
+                    className={styles.ruin}
+                  >
+                    <span>{ruins[worldDomain.id].level}</span>
+                    {ruins[worldDomain.id].isHero ? <div className={styles.dome} /> : null}
+                  </div>
+                ) : null}
+                <div className={styles.fieldIndex}>{index + 1}</div>
+              </div>
+            );
+          })}
       </div>
       <MapNavigator
         value={coordinates}

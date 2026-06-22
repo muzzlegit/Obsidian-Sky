@@ -23,6 +23,7 @@
       "#server/*": ["./src/server/*"],
       "#store/*": ["./src/store/*"],
       "#game/*": ["./src/game/*"],
+      "#transport/*": ["./src/transport/*"],
       "#shared/*": ["./src/shared/*"]
     },
     "noUncheckedIndexedAccess": true,

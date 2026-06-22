@@ -1,19 +1,5 @@
-import { useGameStore } from '#/store/gameStore';
-import type { Ruin } from '../game.public';
-
-function addRuinToStore(ruin: Ruin) {
-  useGameStore.setState((state) => {
-    state.ruins[ruin.id] = ruin;
-  });
-}
-
-function removeRuinFromStore(ruinId: Ruin['id']) {
-  useGameStore.setState((state) => {
-    delete state.ruins[ruinId];
-  });
-}
+import * as commands from './ruin.commands';
 
 export const ruinService = {
-  addRuinToStore,
-  removeRuinFromStore,
+  ...commands,
 };

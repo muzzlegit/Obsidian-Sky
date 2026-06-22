@@ -2,12 +2,12 @@ import type { Ruin } from '../game.public';
 
 export type Kingdom = {
   id: string;
-  fieldsIds: KingdomField['id'][];
 };
 
 export type KingdomField = {
   id: string;
   index: number;
+  kingdomId: string;
   terrain: TerrainType;
   domains: {
     world: Domain | null;

@@ -1,4 +1,4 @@
-import { kingdomQuery } from '#/store/queries/kingdom.query';
+import { transport } from '#/transport';
 import { selectGameUI, useGameUI } from './store/gameUI';
 
 export const useKingdom = () => {
@@ -6,11 +6,10 @@ export const useKingdom = () => {
 
   const kingdoms = selectGameUI((state) => state.kingdoms);
 
-  const kingdom = kingdomQuery.getKingdomById(currentKingdomId);
+  const kingdomFields = transport.query.getKingdomFields(currentKingdomId);
 
   const coordinates = kingdoms.find((kingdom) => kingdom.id === currentKingdomId).coordinates;
 
-  console.log(coordinates);
   const handleIncreaseCoordinate = (key: 'x' | 'y') => {
     const nextCoordinates = {
       ...coordinates,
@@ -48,7 +47,7 @@ export const useKingdom = () => {
   };
 
   return {
-    kingdom,
+    kingdomFields,
     coordinates,
     handleIncreaseCoordinate,
     handleDecreaseCoordinate,

@@ -1,6 +1,5 @@
 import { kingdomService } from '#/game/domain/kingdom/kingdom.service';
 import { ruinService } from '#/game/domain/ruin/ruin.service';
-import { timedDomainService } from '#/game/services/timedDomain.service';
 
 export function registerRuinSubscriptions(eventBus) {
   eventBus.on('ruin:spawned', ({ ruin, location }) => {
@@ -9,7 +8,6 @@ export function registerRuinSubscriptions(eventBus) {
       domain: ruin,
       location,
     });
-    timedDomainService.addTimedDomainToStore({ domainEntity: ruin, location });
   });
 
   eventBus.on('ruin:expired', ({ ruinId, location }) => {
@@ -18,6 +16,5 @@ export function registerRuinSubscriptions(eventBus) {
       domainId: ruinId,
       location,
     });
-    timedDomainService.removeTimedDomainFromStore(ruinId);
   });
 }
