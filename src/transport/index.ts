@@ -1,4 +1,5 @@
 import { commands } from './transport.commands';
+import type { Events } from './transport.contracts';
 import { createEvents } from './transport.events';
 import { queries } from './transport.queries';
 
@@ -7,5 +8,5 @@ export const transport = {
 
   command: commands,
 
-  // event: createEvents()<Events>(),
+  event: createEvents<Events>(),
 };
