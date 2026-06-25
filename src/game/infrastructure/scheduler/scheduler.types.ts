@@ -1,11 +1,15 @@
 import type { DomainLocation, Ruin } from '#/game/domain/game.public';
+import type { engineEvents } from '../eventBus/events/events';
 
-export type SchedulerItem = {
+export type TaskType = engineEvents;
+
+export type Task = {
   expiresAt: number;
-  payload: RuinSchedulerPayload;
+  type: TaskType;
+  payload: RuinTaskPayload;
 };
 
-export type RuinSchedulerPayload = {
-  id: Ruin['id'];
+export type RuinTaskPayload = {
+  ruinId: Ruin['id'];
   location: DomainLocation;
 };
