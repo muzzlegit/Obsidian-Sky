@@ -1,5 +1,6 @@
 import { kingdomService } from '#/game/domain/kingdom/kingdom.service';
 import { ruinService } from '#/game/domain/ruin/ruin.service';
+import { schedulerService } from '../../scheduler/scheduler.service';
 
 export function registerRuinSubscriptions(eventBus) {
   eventBus.on('ruin:spawned', ({ ruin, location }) => {
@@ -8,6 +9,7 @@ export function registerRuinSubscriptions(eventBus) {
       domain: ruin,
       location,
     });
+    schedulerService.addTask(ruin.id, 'ruin:expired', ruin.lifeTime, { ruinId: ruin.id, location });
   });
 
   eventBus.on('ruin:expired', ({ ruinId, location }) => {

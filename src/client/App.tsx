@@ -3,6 +3,7 @@ import { ruinSpawnSystem } from '#/game/systems/ruinSpawnSystem';
 import { startServer } from '#/server/server';
 import { runPeriodically } from '#/shared/utils/runPeriodically';
 import { KingdomMap } from './components/KingdomMap/KingdomMap';
+import { useGameUI } from './store/gameUI';
 import { useServerData } from './useServerData';
 
 const gameData = startServer();
@@ -12,6 +13,7 @@ runPeriodically(ruinSpawnSystem, 60, true);
 export const App = () => {
   console.info('RENDER:[App]');
   useServerData(gameData);
+  useGameUI();
 
   return <div style={{ height: '100%' }}>{<KingdomMap />}</div>;
 };

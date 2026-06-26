@@ -1,5 +1,5 @@
 import type { KingdomFields, Player, RuinsStore, WorldKingdoms } from '#/game/domain/game.public';
-import type { SchedulerItem } from '#/game/infrastructure/scheduler/scheduler.types';
+import type { SchedulerTask } from '#/game/infrastructure/scheduler/scheduler.types';
 import { create } from 'zustand';
 import { createJSONStorage, devtools, persist } from 'zustand/middleware';
 import { immer } from 'zustand/middleware/immer';
@@ -11,7 +11,7 @@ export type RootStore = {
   kingdoms: WorldKingdoms;
   kingdomsFields: KingdomFields;
   ruins: RuinsStore;
-  scheduler: SchedulerItem[];
+  scheduler: SchedulerTask[];
 };
 export const useGameStore = create<RootStore>()(
   devtools(

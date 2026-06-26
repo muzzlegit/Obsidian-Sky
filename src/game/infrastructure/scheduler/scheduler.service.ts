@@ -1,6 +1,6 @@
 import { useGameStore } from '#/store/gameStore';
-import type { engineEvents } from '../eventBus/events/events';
-import type { Task, TaskType } from './scheduler.types';
+import { taskHandlers } from './reschedule';
+import type { SchedulerTask, TaskType } from './scheduler.types';
 
 let schedulerTimeoutId = null;
 
@@ -19,7 +19,7 @@ export function reschedule() {
   // Шукаємо задачу з найменшим часом життя
   let closestTask = activeTasks[0];
   for (let i = 1; i < activeTasks.length; i++) {
-    if (closestTask[i].expiresAt < closestTask.expiresAt) {
+    if (activeTasks[i].expiresAt < closestTask.expiresAt) {
       closestTask = activeTasks[i];
     }
   }
@@ -43,15 +43,42 @@ function processExpiredTasks() {
   const now = Date.now();
 
   const expiredTasks = tasksList.filter((d) => d.expiresAt <= now);
+  if (!expiredTasks.length) return;
+
+  expiredTasks.forEach((task) => {
+    taskHandlers[task.type](task.payload);
+    removeTask(task.id);
+  });
 
   reschedule();
 }
 
-function addTask(taskType: TaskType, payload: Task['payload']) {
-  
+function addTask(
+  id: SchedulerTask['id'],
+  taskType: TaskType,
+  lifeTime: number,
+  payload: SchedulerTask['payload'],
+) {
+  useGameStore.setState((state) => {
+    state.scheduler.push({
+      id,
+      expiresAt: lifeTime + Date.now(),
+      type: taskType,
+      payload,
+    });
+  });
+  reschedule();
+}
+
+function removeTask(taskId: SchedulerTask['id']) {
+  useGameStore.setState((state) => {
+    state.scheduler.filter((task) => task.id !== taskId);
+  });
 }
 
 export const schedulerService = {
   reschedule,
   processExpiredTasks,
+  addTask,
+  removeTask,
 };
