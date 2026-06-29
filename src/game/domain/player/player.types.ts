@@ -1,3 +1,4 @@
+import type { Kingdom } from '../game.public';
 import type { Obsidian } from '../obsidian/obsidian.types';
 import type { Fraction, PlayerRace } from '../race/race.types';
 import type { Resources } from '../resource/resource.types';
@@ -9,10 +10,11 @@ export type Player = {
   fraction: Fraction;
   obsidian: Obsidian;
   recources: Resources;
-  // capital: {
-  //   id: string;
-  //   name: string;
-  //   x: number;
-  //   y: number;
-  // };
+  capital: {
+    kingdomId: Kingdom['id'];
+    //   id: string;
+    name: string;
+    //   x: number;
+    //   y: number;
+  };
 };

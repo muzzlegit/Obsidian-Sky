@@ -4,9 +4,10 @@ import { useGameUI } from './store/gameUI';
 
 export const useServerData = (serverData: ServerData) => {
   if (!serverData) return;
-  const { kingdoms, playerKingdomId } = serverData;
+  const { kingdoms, player } = serverData;
   useGameUI.setState({
-    currentKingdomId: playerKingdomId,
+    player: player,
+    currentKingdomId: player.capital.kingdomId,
     kingdoms: generateCoordinates(kingdoms, 3),
   });
 };

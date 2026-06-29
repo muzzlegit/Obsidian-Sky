@@ -14,10 +14,13 @@ export function reschedule() {
 
   // Отримуємо список активних завдань
   const activeTasks = useGameStore.getState().scheduler;
-  if (activeTasks.length === 0) return;
 
   // Шукаємо задачу з найменшим часом життя
   let closestTask = activeTasks[0];
+  if (!closestTask) {
+    schedulerTimeoutId = setTimeout(processExpiredTasks, 10000);
+    return;
+  }
   for (let i = 1; i < activeTasks.length; i++) {
     if (activeTasks[i].expiresAt < closestTask.expiresAt) {
       closestTask = activeTasks[i];
@@ -30,23 +33,23 @@ export function reschedule() {
   const safeDelay = Math.max(delay + 20, 0);
 
   // Запускаємо функцію по колу через прорахований час
-  schedulerTimeoutId = setTimeout(() => {
-    processExpiredTasks;
-  }, safeDelay);
+  schedulerTimeoutId = setTimeout(processExpiredTasks, safeDelay);
 }
 
 function processExpiredTasks() {
   const tasksList = useGameStore.getState().scheduler;
 
-  if (!tasksList.length) return;
-
   const now = Date.now();
 
   const expiredTasks = tasksList.filter((d) => d.expiresAt <= now);
-  if (!expiredTasks.length) return;
+
+  if (!expiredTasks.length) {
+    reschedule();
+    return;
+  }
 
   expiredTasks.forEach((task) => {
-    taskHandlers[task.type](task.payload);
+    taskHandlers[task.type]?.(task.payload);
     removeTask(task.id);
   });
 
@@ -72,7 +75,7 @@ function addTask(
 
 function removeTask(taskId: SchedulerTask['id']) {
   useGameStore.setState((state) => {
-    state.scheduler.filter((task) => task.id !== taskId);
+    state.scheduler = state.scheduler.filter((task) => task.id !== taskId);
   });
 }
 

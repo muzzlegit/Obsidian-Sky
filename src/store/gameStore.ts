@@ -3,8 +3,29 @@ import type { SchedulerTask } from '#/game/infrastructure/scheduler/scheduler.ty
 import { create } from 'zustand';
 import { createJSONStorage, devtools, persist } from 'zustand/middleware';
 import { immer } from 'zustand/middleware/immer';
-// TYPES
 
+// ! MOCS
+const TEST_PLAYER: Player = {
+  id: '212',
+  obsidian: 1000,
+  race: 'drows',
+  fraction: 'dark',
+  name: 'muzzle',
+  recources: {
+    gold: 100,
+    wood: 100,
+    stone: 100,
+    grain: 100,
+    iron: 100,
+    population: 500,
+  },
+  capital: {
+    kingdomId: '',
+    name: 'Grey Havens',
+  },
+};
+
+// TYPES
 export type RootStore = {
   isCreated: boolean;
   player: Player | null;
@@ -13,26 +34,13 @@ export type RootStore = {
   ruins: RuinsStore;
   scheduler: SchedulerTask[];
 };
+
 export const useGameStore = create<RootStore>()(
   devtools(
     persist(
       immer(() => ({
         isCreated: false,
-        player: {
-          id: '212',
-          obsidian: 1000,
-          race: 'drows',
-          fraction: 'dark',
-          name: 'muzzle',
-          recources: {
-            gold: 100,
-            wood: 100,
-            stone: 100,
-            grain: 100,
-            iron: 100,
-            population: 500,
-          },
-        },
+        player: TEST_PLAYER,
         kingdoms: {},
         kingdomsFields: {},
         ruins: {},
