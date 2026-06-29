@@ -8,7 +8,7 @@ import { useServerData } from './useServerData';
 
 const gameData = startServer();
 registerGameSubscriptions();
-schedulerService.reschedule();
+// schedulerService.reschedule();
 runPeriodically(ruinSpawnSystem, 60, true);
 
 export const App = () => {

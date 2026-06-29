@@ -9,10 +9,18 @@ export type KingdomField = {
   index: number;
   kingdomId: string;
   terrain: TerrainType;
+  cells: FieldCells;
   domains: {
     world: Domain | null;
     underworld: Domain | null;
   };
+};
+
+export type Cell = { id: string };
+
+export type FieldCells = {
+  villages: Cell[][];
+  city: Cell[] | null;
 };
 
 export type FieldDomainPlace = 'world' | 'underworld';

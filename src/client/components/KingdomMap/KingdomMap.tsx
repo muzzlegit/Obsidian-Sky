@@ -45,7 +45,9 @@ export const KingdomMap = () => {
                   {ruins[worldDomain.id].isHero ? <div className={styles.dome} /> : null}
                 </div>
               ) : null}
-              <div className={styles.fieldIndex}>{index + 1}</div>
+              <div className={styles.fieldIndex}>
+                {`[${index + 1}] - ${field.cells.city ? field.cells.city?.length + 1 : ''}`}
+              </div>
             </div>
           );
         })}

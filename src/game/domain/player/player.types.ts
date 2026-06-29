@@ -9,12 +9,5 @@ export type Player = {
   race: PlayerRace;
   fraction: Fraction;
   obsidian: Obsidian;
-  recources: Resources;
-  capital: {
-    kingdomId: Kingdom['id'];
-    //   id: string;
-    name: string;
-    //   x: number;
-    //   y: number;
-  };
+  citiesIds: [];
 };

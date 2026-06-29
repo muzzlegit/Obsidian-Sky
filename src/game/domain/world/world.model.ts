@@ -1,5 +1,16 @@
+import { randomInt } from '#/shared/utils/randomInt';
+import { weightedRandom } from '#/shared/utils/weightedRandom';
 import { generateId } from '#shared/utils/generateId';
-import type { Kingdom, KingdomFields, TerrainType } from '../kingdom/kingdom.types';
+import { CITY_CELLS_AMOUNT_MAP } from '../city/city.constants';
+import { VILLAGE_CELLS_AMOUNT, VILLAGES_AMOUNT } from '../kingdom/kingdom.constants';
+import type {
+  Cell,
+  FieldCells,
+  FieldDomain,
+  Kingdom,
+  KingdomFields,
+  TerrainType,
+} from '../kingdom/kingdom.types';
 import type { WorldKingdoms } from './world.types';
 
 export const generateKingdomsData = (worldData: TerrainType[][]) => {
@@ -29,9 +40,31 @@ export const generateKingdomFields = (
       id: fieldId,
       index: fieldIndex,
       kingdomId,
-      terrain: fieldsData[fieldIndex],
+      terrain: fieldsData[fieldIndex]!,
+      cells: generateFieldCells(),
       domains: { underworld: null, world: null },
     };
   }
   return fields;
 };
+
+function generateFieldCells(): FieldCells {
+  const villages: FieldCells['villages'] = Array.from({ length: VILLAGES_AMOUNT }, () =>
+    Array.from({ length: VILLAGE_CELLS_AMOUNT }, createCell),
+  );
+  const fieldLevel = weightedRandom({ 1: 20, 2: 20, 3: 20, 4: 20, 5: 20, none: 10 });
+
+  if (fieldLevel === 'none') return { villages, city: null };
+
+  const cellsAmount = randomInt(
+    CITY_CELLS_AMOUNT_MAP[fieldLevel].min,
+    CITY_CELLS_AMOUNT_MAP[fieldLevel].max,
+  );
+  const city: FieldCells['city'] = Array.from({ length: cellsAmount }, createCell);
+
+  return { villages, city };
+}
+
+const createCell = () => ({
+  id: generateId('cell'),
+});

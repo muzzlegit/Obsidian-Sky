@@ -9,7 +9,7 @@ export function registerRuinSubscriptions(eventBus) {
       domain: ruin,
       location,
     });
-    schedulerService.addTask(ruin.id, 'ruin:expired', ruin.lifeTime, { ruinId: ruin.id, location });
+    // schedulerService.addTask(ruin.id, 'ruin:expired', ruin.lifeTime, { ruinId: ruin.id, location });
   });
 
   eventBus.on('ruin:expired', ({ ruinId, location }) => {
